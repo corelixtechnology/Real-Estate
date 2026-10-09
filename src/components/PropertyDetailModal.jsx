@@ -218,7 +218,7 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
               {/* Direct Quick Action Buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <a
-                  href={`https://wa.me/918056035603?text=${whatsappMessage}`}
+                  href={`https://wa.me/912223334452?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noreferrer"
                   className="btn"

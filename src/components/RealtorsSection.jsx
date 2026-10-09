@@ -56,7 +56,7 @@ export default function RealtorsSection() {
                       <span>Call Now</span>
                     </a>
                     <a
-                      href={`https://wa.me/918056035603?text=${waMsg}`}
+                      href={`https://wa.me/912223334452?text=${waMsg}`}
                       target="_blank"
                       rel="noreferrer"
                       className="realtor-btn realtor-wa-btn"

@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import PageHeader from '../components/PageHeader';
 import { PROPERTIES, CITIES, PROPERTY_TYPES, BUDGET_RANGES_BUY } from '../data/mockData';
-import { 
-  Search, Filter, SlidersHorizontal, MapPin, Bed, Bath, Car, 
-  ShieldCheck, Sparkles, Eye, Scale, Calculator, ArrowRight, 
-  Check, LayoutGrid, List, RotateCcw, Compass, Phone, MessageSquare 
+import {
+  Search, Filter, SlidersHorizontal, MapPin, Bed, Bath, Car,
+  ShieldCheck, Sparkles, Eye, Scale, Calculator, ArrowRight,
+  Check, LayoutGrid, List, RotateCcw, Compass, Phone, MessageSquare
 } from 'lucide-react';
 import { TextAnimate } from '@/registry/magicui/text-animate';
 
@@ -68,7 +68,7 @@ export default function BuyPage({
     // Search Query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      list = list.filter(p => 
+      list = list.filter(p =>
         p.title.toLowerCase().includes(q) ||
         p.locality.toLowerCase().includes(q) ||
         p.cityName.toLowerCase().includes(q) ||
@@ -120,7 +120,7 @@ export default function BuyPage({
       {/* Filter & Search Bar Section */}
       <section className="hanu-marketplace-controls">
         <div className="container">
-          
+
           {/* Top Search Input & City Selector Strip */}
           <div className="hanu-controls-top-row">
             {/* Search Input */}
@@ -157,8 +157,8 @@ export default function BuyPage({
             {/* Property Type Select */}
             <div className="hanu-select-filter">
               <label>Property Type:</label>
-              <select 
-                value={selectedType} 
+              <select
+                value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
               >
                 {PROPERTY_TYPES.map((t, idx) => (
@@ -170,8 +170,8 @@ export default function BuyPage({
             {/* Budget Range */}
             <div className="hanu-select-filter">
               <label>Budget:</label>
-              <select 
-                value={selectedBudgetIdx} 
+              <select
+                value={selectedBudgetIdx}
                 onChange={(e) => setSelectedBudgetIdx(Number(e.target.value))}
               >
                 {BUDGET_RANGES_BUY.map((b, idx) => (
@@ -199,19 +199,19 @@ export default function BuyPage({
             {/* Checkbox Toggles */}
             <div className="hanu-checkbox-filters">
               <label className="hanu-checkbox-item">
-                <input 
-                  type="checkbox" 
-                  checked={verifiedOnly} 
-                  onChange={(e) => setVerifiedOnly(e.target.checked)} 
+                <input
+                  type="checkbox"
+                  checked={verifiedOnly}
+                  onChange={(e) => setVerifiedOnly(e.target.checked)}
                 />
                 <span>Verified Legal Title Only</span>
               </label>
 
               <label className="hanu-checkbox-item">
-                <input 
-                  type="checkbox" 
-                  checked={virtualTourOnly} 
-                  onChange={(e) => setVirtualTourOnly(e.target.checked)} 
+                <input
+                  type="checkbox"
+                  checked={virtualTourOnly}
+                  onChange={(e) => setVirtualTourOnly(e.target.checked)}
                 />
                 <span>360° Virtual Tour Available</span>
               </label>
@@ -259,15 +259,15 @@ export default function BuyPage({
 
               {/* View mode toggle */}
               <div className="view-mode-toggle">
-                <button 
-                  onClick={() => setViewMode('grid')} 
+                <button
+                  onClick={() => setViewMode('grid')}
                   className={`view-toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
                   title="Grid View"
                 >
                   <LayoutGrid size={16} />
                 </button>
-                <button 
-                  onClick={() => setViewMode('list')} 
+                <button
+                  onClick={() => setViewMode('list')}
                   className={`view-toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
                   title="Executive List View"
                 >
@@ -309,7 +309,7 @@ export default function BuyPage({
                     {/* Media Container */}
                     <div className="prop-card-media" onClick={() => onSelectProperty(prop)}>
                       <img src={prop.images[0]} alt={prop.title} loading="lazy" />
-                      
+
                       {/* Top Badges */}
                       <div className="prop-badges-row">
                         {prop.exclusive && (
@@ -324,7 +324,7 @@ export default function BuyPage({
 
                       {/* 360 Virtual Tour badge */}
                       {prop.virtualTourAvailable && (
-                        <button 
+                        <button
                           className="prop-virtual-tour-btn"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -395,10 +395,10 @@ export default function BuyPage({
                             <span className="agent-role">Exclusive Advisor</span>
                             <span className="agent-name">{prop.agent.name}</span>
                           </div>
-                          <a 
-                            href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hi, I would like to inquire about ${prop.title} (${prop.id}) listed at ${prop.priceFormatted}`)}`}
-                            target="_blank" 
-                            rel="noreferrer" 
+                          <a
+                            href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I would like to inquire about ${prop.title} (${prop.id}) listed at ${prop.priceFormatted}`)}`}
+                            target="_blank"
+                            rel="noreferrer"
                             className="agent-wa-btn"
                             title="Direct WhatsApp"
                           >
@@ -410,21 +410,21 @@ export default function BuyPage({
                       {/* Card Action Footer */}
                       <div className="prop-card-footer">
                         {/* Compare Checkbox */}
-                        <label 
+                        <label
                           className={`compare-checkbox-label ${isCompared ? 'checked' : ''}`}
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <input 
-                            type="checkbox" 
+                          <input
+                            type="checkbox"
                             checked={isCompared}
-                            onChange={() => onToggleCompare(prop)} 
+                            onChange={() => onToggleCompare(prop)}
                           />
                           <Scale size={13} />
                           <span>{isCompared ? 'Comparing' : 'Compare'}</span>
                         </label>
 
                         <div className="prop-footer-buttons">
-                          <button 
+                          <button
                             onClick={() => onSelectProperty(prop)}
                             className="hanu-btn-primary-sm"
                           >

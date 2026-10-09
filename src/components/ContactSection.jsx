@@ -80,7 +80,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="contact-item-title">Official WhatsApp Desk</div>
-                    <a href="https://wa.me/918056035603" target="_blank" rel="noreferrer" className="contact-item-val">+91 80560 35603</a>
+                    <a href="https://wa.me/912223334452" target="_blank" rel="noreferrer" className="contact-item-val">+91 80560 35603</a>
                   </div>
                 </div>
 

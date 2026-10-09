@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { 
-  ChevronDown, Menu, X, Building2, User, Layers, 
+import {
+  ChevronDown, Menu, X, Building2, User, Layers,
   Sparkles, Phone, ShieldCheck, Home, Briefcase, Globe, Scale, Calculator, ArrowRight, Key, PlusCircle, CheckCircle2
 } from 'lucide-react';
 
@@ -70,7 +70,7 @@ export default function Navbar({
 
   return (
     <header className={`hanu-navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
-      
+
       {/* Top Heritage Gold Bar */}
       <div className="hanu-navbar-top-strip">
         <div className="container-wide top-strip-inner">
@@ -92,15 +92,15 @@ export default function Navbar({
 
       {/* Main Glassmorphic Navigation Bar */}
       <div className="container-wide hanu-navbar-inner">
-        
+
         {/* Regal Brand Logo & Monogram */}
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           className="hanu-logo-link"
-          onClick={(e) => { 
-            e.preventDefault(); 
-            handleNav('home'); 
-            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+          onClick={(e) => {
+            e.preventDefault();
+            handleNav('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
           <div className="brand-regal-crest">
@@ -118,9 +118,9 @@ export default function Navbar({
 
         {/* Center Desktop Navigation Links */}
         <nav className="hanu-nav-links-desktop">
-          
+
           {/* Home Link */}
-          <button 
+          <button
             className={`hanu-nav-link ${currentPage === 'home' ? 'active' : ''}`}
             onClick={() => handleNav('home')}
           >
@@ -128,13 +128,13 @@ export default function Navbar({
           </button>
 
           {/* About Dropdown */}
-          <div 
-            className="hanu-nav-item-dropdown" 
+          <div
+            className="hanu-nav-item-dropdown"
             ref={aboutRef}
             onMouseEnter={() => setAboutDropdownOpen(true)}
             onMouseLeave={() => setAboutDropdownOpen(false)}
           >
-            <button 
+            <button
               className={`hanu-nav-link ${currentPage === 'about' || currentPage === 'cities' ? 'active' : ''}`}
               onClick={() => handleNav('about')}
             >
@@ -163,7 +163,7 @@ export default function Navbar({
           </div>
 
           {/* Buy Link */}
-          <button 
+          <button
             className={`hanu-nav-link ${currentPage === 'buy' ? 'active' : ''}`}
             onClick={() => handleNav('buy')}
           >
@@ -171,7 +171,7 @@ export default function Navbar({
           </button>
 
           {/* Rent Link */}
-          <button 
+          <button
             className={`hanu-nav-link ${currentPage === 'rent' ? 'active' : ''}`}
             onClick={() => handleNav('rent')}
           >
@@ -179,13 +179,13 @@ export default function Navbar({
           </button>
 
           {/* Services Dropdown */}
-          <div 
-            className="hanu-nav-item-dropdown" 
+          <div
+            className="hanu-nav-item-dropdown"
             ref={servicesRef}
             onMouseEnter={() => setServicesDropdownOpen(true)}
             onMouseLeave={() => setServicesDropdownOpen(false)}
           >
-            <button 
+            <button
               className={`hanu-nav-link ${currentPage === 'services' || currentPage === 'calq' ? 'active' : ''}`}
               onClick={() => handleNav('services')}
             >
@@ -234,7 +234,7 @@ export default function Navbar({
           </div>
 
           {/* Highly Visible Luxury CalQ Space Calculator Pill */}
-          <button 
+          <button
             className={`hanu-nav-calq-btn ${currentPage === 'calq' ? 'active' : ''}`}
             onClick={() => handleNav('calq')}
             title="CalQ — Commercial Space & Cost Calculator"
@@ -245,7 +245,7 @@ export default function Navbar({
           </button>
 
           {/* List your Properties (Dedicated Page) */}
-          <button 
+          <button
             className={`hanu-nav-link ${currentPage === 'sell' ? 'active' : ''}`}
             onClick={() => handleNav('sell')}
           >
@@ -253,13 +253,13 @@ export default function Navbar({
           </button>
 
           {/* Agents Dropdown */}
-          <div 
-            className="hanu-nav-item-dropdown" 
+          <div
+            className="hanu-nav-item-dropdown"
             ref={agentsRef}
             onMouseEnter={() => setAgentsDropdownOpen(true)}
             onMouseLeave={() => setAgentsDropdownOpen(false)}
           >
-            <button 
+            <button
               className={`hanu-nav-link ${currentPage === 'agents' || currentPage === 'careers' ? 'active' : ''}`}
               onClick={() => handleNav('agents')}
             >
@@ -288,7 +288,7 @@ export default function Navbar({
           </div>
 
           {/* Contact */}
-          <button 
+          <button
             className={`hanu-nav-link ${currentPage === 'contact' ? 'active' : ''}`}
             onClick={() => handleNav('contact')}
           >
@@ -298,9 +298,9 @@ export default function Navbar({
 
         {/* Right CTA Area: List Property & VIP Login & Mobile Tools */}
         <div className="hanu-nav-right-action">
-          
-          <button 
-            className="hanu-list-prop-quick-btn" 
+
+          <button
+            className="hanu-list-prop-quick-btn"
             onClick={() => handleNav('sell')}
           >
             <PlusCircle size={15} />
@@ -312,7 +312,7 @@ export default function Navbar({
           </button>
 
           {/* Quick Mobile CalQ Calculator Button */}
-          <button 
+          <button
             className={`hanu-mobile-quick-calq-btn ${currentPage === 'calq' ? 'active' : ''}`}
             onClick={() => handleNav('calq')}
             title="CalQ Space Calculator"
@@ -324,8 +324,8 @@ export default function Navbar({
           </button>
 
           {/* Quick Mobile Call Shortcut */}
-          <a 
-            href="tel:+914443999000" 
+          <a
+            href="tel:+914443999000"
             className="hanu-mobile-quick-phone-btn"
             title="Call Central Helpline"
             aria-label="Call Central Helpline"
@@ -334,8 +334,8 @@ export default function Navbar({
           </a>
 
           {/* Mobile Menu Toggle Button */}
-          <button 
-            className="hanu-mobile-toggle" 
+          <button
+            className="hanu-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           >
@@ -346,7 +346,7 @@ export default function Navbar({
 
       {/* Mobile Backdrop Overlay */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="hanu-mobile-backdrop"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
@@ -356,7 +356,7 @@ export default function Navbar({
       {/* Luxury Mobile Slide-out Drawer */}
       {mobileMenuOpen && (
         <div className="hanu-mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-          
+
           {/* Drawer Top Header */}
           <div className="mobile-drawer-header">
             <div className="mobile-drawer-brand-wrap">
@@ -369,7 +369,7 @@ export default function Navbar({
               </div>
             </div>
 
-            <button 
+            <button
               className="mobile-drawer-close-btn"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close menu"
@@ -380,24 +380,24 @@ export default function Navbar({
 
           {/* Quick Action Pills Grid */}
           <div className="mobile-quick-actions-row">
-            <button 
+            <button
               className="mobile-quick-pill highlight"
               onClick={() => { setMobileMenuOpen(false); onOpenAuth(); }}
             >
               <User size={15} />
               <span>VIP Login</span>
             </button>
-            <button 
+            <button
               className="mobile-quick-pill gold"
               onClick={() => handleNav('sell')}
             >
               <PlusCircle size={15} />
               <span>List Property</span>
             </button>
-            <a 
-              href="https://wa.me/918056035603" 
-              target="_blank" 
-              rel="noreferrer" 
+            <a
+              href="https://wa.me/912223334452"
+              target="_blank"
+              rel="noreferrer"
               className="mobile-quick-pill whatsapp"
             >
               <Sparkles size={15} />
@@ -407,13 +407,13 @@ export default function Navbar({
 
           {/* Scrollable Navigation Category Cards */}
           <div className="mobile-drawer-links-scroll">
-            
+
             {/* 1. Prime Marketplace */}
             <div className="mobile-section-group">
               <div className="mobile-section-label">PRIME MARKETPLACE</div>
-              
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'home' ? 'active' : ''}`} 
+
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'home' ? 'active' : ''}`}
                 onClick={() => handleNav('home')}
               >
                 <div className="mobile-link-icon-bubble"><Home size={18} /></div>
@@ -424,8 +424,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'buy' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'buy' ? 'active' : ''}`}
                 onClick={() => handleNav('buy')}
               >
                 <div className="mobile-link-icon-bubble"><Building2 size={18} /></div>
@@ -436,8 +436,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'rent' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'rent' ? 'active' : ''}`}
                 onClick={() => handleNav('rent')}
               >
                 <div className="mobile-link-icon-bubble"><Key size={18} /></div>
@@ -448,8 +448,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'sell' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'sell' ? 'active' : ''}`}
                 onClick={() => handleNav('sell')}
               >
                 <div className="mobile-link-icon-bubble gold"><PlusCircle size={18} /></div>
@@ -465,8 +465,8 @@ export default function Navbar({
             <div className="mobile-section-group">
               <div className="mobile-section-label">INTERACTIVE LUXURY TOOLS</div>
 
-              <button 
-                className={`hanu-mobile-link-card highlight ${currentPage === 'calq' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card highlight ${currentPage === 'calq' ? 'active' : ''}`}
                 onClick={() => handleNav('calq')}
               >
                 <div className="mobile-link-icon-bubble gold"><Calculator size={18} /></div>
@@ -480,8 +480,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'services' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'services' ? 'active' : ''}`}
                 onClick={() => handleNav('services')}
               >
                 <div className="mobile-link-icon-bubble"><Layers size={18} /></div>
@@ -497,8 +497,8 @@ export default function Navbar({
             <div className="mobile-section-group">
               <div className="mobile-section-label">HERITAGE & NETWORK</div>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'about' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'about' ? 'active' : ''}`}
                 onClick={() => handleNav('about')}
               >
                 <div className="mobile-link-icon-bubble"><Sparkles size={18} /></div>
@@ -509,8 +509,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'agents' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'agents' ? 'active' : ''}`}
                 onClick={() => handleNav('agents')}
               >
                 <div className="mobile-link-icon-bubble"><User size={18} /></div>
@@ -521,8 +521,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'cities' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'cities' ? 'active' : ''}`}
                 onClick={() => handleNav('cities')}
               >
                 <div className="mobile-link-icon-bubble"><Globe size={18} /></div>
@@ -533,8 +533,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'careers' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'careers' ? 'active' : ''}`}
                 onClick={() => handleNav('careers')}
               >
                 <div className="mobile-link-icon-bubble"><Briefcase size={18} /></div>
@@ -545,8 +545,8 @@ export default function Navbar({
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
 
-              <button 
-                className={`hanu-mobile-link-card ${currentPage === 'contact' ? 'active' : ''}`} 
+              <button
+                className={`hanu-mobile-link-card ${currentPage === 'contact' ? 'active' : ''}`}
                 onClick={() => handleNav('contact')}
               >
                 <div className="mobile-link-icon-bubble"><Phone size={18} /></div>

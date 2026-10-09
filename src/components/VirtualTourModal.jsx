@@ -116,7 +116,7 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
             </div>
 
             <a
-              href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hi, I just viewed the 360 virtual tour for ${property.title} (${property.id}). I would like to arrange an in-person private viewing.`)}`}
+              href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I just viewed the 360 virtual tour for ${property.title} (${property.id}). I would like to arrange an in-person private viewing.`)}`}
               target="_blank"
               rel="noreferrer"
               className="hanu-btn-primary"

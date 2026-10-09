@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import { BRANCHES } from '../data/mockData';
-import { 
-  MapPin, Phone, Mail, Clock, MessageSquare, 
-  Sparkles, CheckCircle2, ArrowRight, ExternalLink, Send, ShieldCheck 
+import {
+  MapPin, Phone, Mail, Clock, MessageSquare,
+  Sparkles, CheckCircle2, ArrowRight, ExternalLink, Send, ShieldCheck
 } from 'lucide-react';
 
 export default function ContactPage({ onNavigateHome }) {
@@ -100,20 +100,20 @@ export default function ContactPage({ onNavigateHome }) {
                 </div>
 
                 <div className="branch-card-actions">
-                  <a 
+                  <a
                     href={`https://www.google.com/maps/search/?api=1&query=${branch.mapQuery || encodeURIComponent(branch.address)}`}
-                    target="_blank" 
-                    rel="noreferrer" 
+                    target="_blank"
+                    rel="noreferrer"
                     className="branch-maps-btn"
                   >
                     <ExternalLink size={14} />
                     <span>Get Directions</span>
                   </a>
 
-                  <a 
-                    href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hello Hanu Reddy Realty ${branch.name}, I would like to visit your office.`)}`}
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hello Hanu Reddy Realty ${branch.name}, I would like to visit your office.`)}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="branch-wa-btn"
                   >
                     <MessageSquare size={14} />
@@ -132,7 +132,7 @@ export default function ContactPage({ onNavigateHome }) {
       <section className="hanu-contact-form-section">
         <div className="container">
           <div className="contact-form-container-box">
-            
+
             {/* Left Info Column */}
             <div className="contact-info-col">
               <span className="badge-tag badge-gold">VIP Concierge</span>
@@ -182,25 +182,25 @@ export default function ContactPage({ onNavigateHome }) {
                   <div className="wizard-inputs-row">
                     <div className="wizard-input-wrap">
                       <label>Your Full Name *</label>
-                      <input 
-                        type="text" 
-                        required 
-                        placeholder="e.g. S. Sundaram" 
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g. S. Sundaram"
                         value={contactName}
                         onChange={(e) => setContactName(e.target.value)}
-                        className="hanu-input-field" 
+                        className="hanu-input-field"
                       />
                     </div>
 
                     <div className="wizard-input-wrap">
                       <label>Mobile Number / WhatsApp *</label>
-                      <input 
-                        type="tel" 
-                        required 
-                        placeholder="+91 98400 XXXXX" 
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 98400 XXXXX"
                         value={contactPhone}
                         onChange={(e) => setContactPhone(e.target.value)}
-                        className="hanu-input-field" 
+                        className="hanu-input-field"
                       />
                     </div>
                   </div>
@@ -208,20 +208,20 @@ export default function ContactPage({ onNavigateHome }) {
                   <div className="wizard-inputs-row">
                     <div className="wizard-input-wrap">
                       <label>Email Address *</label>
-                      <input 
-                        type="email" 
-                        required 
-                        placeholder="sundaram@company.com" 
+                      <input
+                        type="email"
+                        required
+                        placeholder="sundaram@company.com"
                         value={contactEmail}
                         onChange={(e) => setContactEmail(e.target.value)}
-                        className="hanu-input-field" 
+                        className="hanu-input-field"
                       />
                     </div>
 
                     <div className="wizard-input-wrap">
                       <label>Requirement Type *</label>
-                      <select 
-                        value={contactNature} 
+                      <select
+                        value={contactNature}
                         onChange={(e) => setContactNature(e.target.value)}
                         className="hanu-input-field"
                       >
@@ -238,8 +238,8 @@ export default function ContactPage({ onNavigateHome }) {
 
                   <div className="wizard-input-wrap">
                     <label>How can we assist you? (Optional)</label>
-                    <textarea 
-                      rows={3} 
+                    <textarea
+                      rows={3}
                       placeholder="Specify preferred budget, target localities, property specifications or questions..."
                       value={contactMessage}
                       onChange={(e) => setContactMessage(e.target.value)}

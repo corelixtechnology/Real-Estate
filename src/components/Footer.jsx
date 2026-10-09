@@ -2,12 +2,12 @@ import React from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, Heart, ArrowUp, Sparkles, Scale, ExternalLink, Calculator } from 'lucide-react';
 import { CITIES } from '../data/mockData';
 
-export default function Footer({ 
-  onNavigatePage, 
-  onOpenListProperty, 
-  onOpenEmiCalc, 
-  onOpenRoiCalc, 
-  onSelectCity 
+export default function Footer({
+  onNavigatePage,
+  onOpenListProperty,
+  onOpenEmiCalc,
+  onOpenRoiCalc,
+  onSelectCity
 }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -100,7 +100,7 @@ export default function Footer({
                 <Phone size={14} color="#ffc278" />
                 <span>+91 44 4399 9000</span>
               </a>
-              <a href="https://wa.me/918056035603" target="_blank" rel="noreferrer" style={{ color: '#25D366', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <a href="https://wa.me/912223334452" target="_blank" rel="noreferrer" style={{ color: '#25D366', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{ fontSize: '1.1rem' }}>●</span>
                 <span>WhatsApp: +91 80560 35603</span>
               </a>

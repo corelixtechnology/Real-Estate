@@ -188,7 +188,7 @@ export default function EmiCalculatorModal({ onClose }) {
               </div>
 
               <a
-                href="https://wa.me/918056035603?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20guidance%20on%20Home%20Loan%20assistance%20and%20bank%20interest%20rates."
+                href="https://wa.me/912223334452?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20guidance%20on%20Home%20Loan%20assistance%20and%20bank%20interest%20rates."
                 target="_blank"
                 rel="noreferrer"
                 className="btn"

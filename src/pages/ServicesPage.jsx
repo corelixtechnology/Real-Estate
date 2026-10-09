@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import { SERVICES } from '../data/mockData';
-import { 
-  Home, Building2, Globe, Handshake, ShieldCheck, 
-  Compass, ArrowRight, CheckCircle2, Sparkles, HelpCircle, Phone, MessageSquare 
+import {
+  Home, Building2, Globe, Handshake, ShieldCheck,
+  Compass, ArrowRight, CheckCircle2, Sparkles, HelpCircle, Phone, MessageSquare
 } from 'lucide-react';
 
 export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNavigatePage }) {
@@ -99,8 +99,8 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
               </div>
 
               <div className="srv-actions-row">
-                <a 
-                  href="tel:+919840012345" 
+                <a
+                  href="tel:+919840012345"
                   className="hanu-btn-primary"
                 >
                   <span>Book Private Consultation</span>
@@ -144,9 +144,9 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
               <div className="matchmaker-fields-row">
                 <div className="matchmaker-field">
                   <label>1. What is your primary real estate objective?</label>
-                  <select 
-                    value={quizGoal} 
-                    onChange={(e) => setQuizGoal(e.target.value)} 
+                  <select
+                    value={quizGoal}
+                    onChange={(e) => setQuizGoal(e.target.value)}
                     required
                     className="hanu-input-field"
                   >
@@ -162,9 +162,9 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
 
                 <div className="matchmaker-field">
                   <label>2. Which metropolis or market?</label>
-                  <select 
-                    value={quizCity} 
-                    onChange={(e) => setQuizCity(e.target.value)} 
+                  <select
+                    value={quizCity}
+                    onChange={(e) => setQuizCity(e.target.value)}
                     required
                     className="hanu-input-field"
                   >
@@ -193,16 +193,16 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
                 <h3>{quizResult.title}</h3>
                 <p>{quizResult.shortDesc}</p>
                 <div className="result-cta-row">
-                  <a 
-                    href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I completed the service matchmaker for "${quizResult.title}" in ${quizCity.toUpperCase()}. Please connect me with the Senior Director.`)}`}
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I completed the service matchmaker for "${quizResult.title}" in ${quizCity.toUpperCase()}. Please connect me with the Senior Director.`)}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="hanu-btn-primary"
                   >
                     <span>Connect with Senior Director via WhatsApp</span>
                     <MessageSquare size={15} />
                   </a>
-                  <button 
+                  <button
                     onClick={() => {
                       setSelectedServiceId(quizResult.id);
                       window.scrollTo({ top: 400, behavior: 'smooth' });

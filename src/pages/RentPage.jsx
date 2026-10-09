@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import PageHeader from '../components/PageHeader';
 import { PROPERTIES, CITIES, BUDGET_RANGES_RENT } from '../data/mockData';
-import { 
-  Search, Filter, MapPin, Bed, Bath, Car, ShieldCheck, 
-  Sparkles, Eye, Scale, ArrowRight, LayoutGrid, List, 
-  RotateCcw, Compass, Phone, MessageSquare, Check, Key, Briefcase 
+import {
+  Search, Filter, MapPin, Bed, Bath, Car, ShieldCheck,
+  Sparkles, Eye, Scale, ArrowRight, LayoutGrid, List,
+  RotateCcw, Compass, Phone, MessageSquare, Check, Key, Briefcase
 } from 'lucide-react';
 
 export default function RentPage({
@@ -56,7 +56,7 @@ export default function RentPage({
     // Search query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      list = list.filter(p => 
+      list = list.filter(p =>
         p.title.toLowerCase().includes(q) ||
         p.locality.toLowerCase().includes(q) ||
         p.cityName.toLowerCase().includes(q) ||
@@ -104,7 +104,7 @@ export default function RentPage({
       {/* Filter Section */}
       <section className="hanu-marketplace-controls">
         <div className="container">
-          
+
           {/* Top Search & City Bar */}
           <div className="hanu-controls-top-row">
             <div className="hanu-search-input-wrap">
@@ -139,8 +139,8 @@ export default function RentPage({
             {/* Monthly Budget */}
             <div className="hanu-select-filter">
               <label>Monthly Rent Budget:</label>
-              <select 
-                value={selectedBudgetIdx} 
+              <select
+                value={selectedBudgetIdx}
                 onChange={(e) => setSelectedBudgetIdx(Number(e.target.value))}
               >
                 {BUDGET_RANGES_RENT.map((b, idx) => (
@@ -152,8 +152,8 @@ export default function RentPage({
             {/* Furnishing */}
             <div className="hanu-select-filter">
               <label>Furnishing Status:</label>
-              <select 
-                value={selectedFurnishing} 
+              <select
+                value={selectedFurnishing}
                 onChange={(e) => setSelectedFurnishing(e.target.value)}
               >
                 <option value="all">All Furnishing Levels</option>
@@ -182,10 +182,10 @@ export default function RentPage({
             {/* Corporate lease check */}
             <div className="hanu-checkbox-filters">
               <label className="hanu-checkbox-item">
-                <input 
-                  type="checkbox" 
-                  checked={corporateOnly} 
-                  onChange={(e) => setCorporateOnly(e.target.checked)} 
+                <input
+                  type="checkbox"
+                  checked={corporateOnly}
+                  onChange={(e) => setCorporateOnly(e.target.checked)}
                 />
                 <span>MNC & Diplomat Ready</span>
               </label>
@@ -219,15 +219,15 @@ export default function RentPage({
               </div>
 
               <div className="view-mode-toggle">
-                <button 
-                  onClick={() => setViewMode('grid')} 
+                <button
+                  onClick={() => setViewMode('grid')}
                   className={`view-toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
                   title="Grid View"
                 >
                   <LayoutGrid size={16} />
                 </button>
-                <button 
-                  onClick={() => setViewMode('list')} 
+                <button
+                  onClick={() => setViewMode('list')}
                   className={`view-toggle-btn ${viewMode === 'list' ? 'active' : ''}`}
                   title="Executive List View"
                 >
@@ -265,7 +265,7 @@ export default function RentPage({
                   <div key={prop.id} className="hanu-property-luxury-card">
                     <div className="prop-card-media" onClick={() => onSelectProperty(prop)}>
                       <img src={prop.images[0]} alt={prop.title} loading="lazy" />
-                      
+
                       <div className="prop-badges-row">
                         <span className="badge-tag badge-gold">For Rent / Lease</span>
                         {prop.verified && (
@@ -276,7 +276,7 @@ export default function RentPage({
                       </div>
 
                       {prop.virtualTourAvailable && (
-                        <button 
+                        <button
                           className="prop-virtual-tour-btn"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -351,10 +351,10 @@ export default function RentPage({
                             <span className="agent-role">Rental Advisor</span>
                             <span className="agent-name">{prop.agent.name}</span>
                           </div>
-                          <a 
-                            href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hi, I am interested in renting ${prop.title} (${prop.id}) listed at ${displayRent}`)}`}
-                            target="_blank" 
-                            rel="noreferrer" 
+                          <a
+                            href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I am interested in renting ${prop.title} (${prop.id}) listed at ${displayRent}`)}`}
+                            target="_blank"
+                            rel="noreferrer"
                             className="agent-wa-btn"
                           >
                             <MessageSquare size={14} />
@@ -363,20 +363,20 @@ export default function RentPage({
                       )}
 
                       <div className="prop-card-footer">
-                        <label 
+                        <label
                           className={`compare-checkbox-label ${isCompared ? 'checked' : ''}`}
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <input 
-                            type="checkbox" 
+                          <input
+                            type="checkbox"
                             checked={isCompared}
-                            onChange={() => onToggleCompare(prop)} 
+                            onChange={() => onToggleCompare(prop)}
                           />
                           <Scale size={13} />
                           <span>{isCompared ? 'Comparing' : 'Compare'}</span>
                         </label>
 
-                        <button 
+                        <button
                           onClick={() => onSelectProperty(prop)}
                           className="hanu-btn-primary-sm"
                         >

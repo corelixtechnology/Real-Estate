@@ -200,7 +200,7 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
                       </a>
 
                       <a
-                        href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`}
+                        href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="realtor-action-wa-btn"
@@ -252,14 +252,14 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
 
       {/* Consultation Booking Modal */}
       {consultModalAgent && (
-        <div 
-          className="modal-overlay" 
+        <div
+          className="modal-overlay"
           onClick={() => setConsultModalAgent(null)}
           data-lenis-prevent="true"
           onWheel={(e) => e.stopPropagation()}
         >
-          <div 
-            className="modal-content-box consult-modal-box" 
+          <div
+            className="modal-content-box consult-modal-box"
             onClick={(e) => e.stopPropagation()}
             data-lenis-prevent="true"
             onWheel={(e) => e.stopPropagation()}
