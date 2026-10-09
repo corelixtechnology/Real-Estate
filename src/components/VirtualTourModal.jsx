@@ -26,9 +26,9 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
 
         {/* 360 Viewport Container */}
         <div className="virtual-tour-viewport">
-          <img 
-            src={currentRoomData.image} 
-            alt={currentRoomData.name} 
+          <img
+            src={currentRoomData.image}
+            alt={currentRoomData.name}
             className="virtual-tour-image"
             style={{ transform: `scale(${zoomLevel})` }}
           />
@@ -47,15 +47,15 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
             </div>
 
             <div className="tour-quick-actions">
-              <button 
-                onClick={() => setAmbientAudio(!ambientAudio)} 
+              <button
+                onClick={() => setAmbientAudio(!ambientAudio)}
                 className={`tour-tool-btn ${ambientAudio ? 'active' : ''}`}
                 title="Toggle Ambient Audio"
               >
                 {ambientAudio ? <Volume2 size={16} /> : <VolumeX size={16} />}
               </button>
-              <button 
-                onClick={() => setZoomLevel(prev => prev === 1 ? 1.25 : 1)} 
+              <button
+                onClick={() => setZoomLevel(prev => prev === 1 ? 1.25 : 1)}
                 className="tour-tool-btn"
                 title="Toggle Zoom"
               >
@@ -115,10 +115,10 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
               </div>
             </div>
 
-            <a 
+            <a
               href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hi, I just viewed the 360 virtual tour for ${property.title} (${property.id}). I would like to arrange an in-person private viewing.`)}`}
-              target="_blank" 
-              rel="noreferrer" 
+              target="_blank"
+              rel="noreferrer"
               className="hanu-btn-primary"
             >
               <span>Schedule In-Person Walkthrough</span>

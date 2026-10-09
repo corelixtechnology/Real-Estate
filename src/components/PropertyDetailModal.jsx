@@ -32,9 +32,9 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
         {/* Modal Top Gallery */}
         <div style={{ position: 'relative', background: '#17171d' }}>
           <div style={{ height: '420px', width: '100%', overflow: 'hidden' }}>
-            <img 
-              src={property.images[activeImageIndex] || property.images[0]} 
-              alt={property.title} 
+            <img
+              src={property.images[activeImageIndex] || property.images[0]}
+              alt={property.title}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>

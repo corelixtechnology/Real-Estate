@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import PageHeader from '../components/PageHeader';
 import { REALTORS, CITIES } from '../data/mockData';
-import { 
-  Users, Search, Phone, Mail, MessageSquare, 
-  MapPin, Award, ShieldCheck, ArrowRight, Sparkles, CheckCircle 
+import {
+  Users, Search, Phone, Mail, MessageSquare,
+  MapPin, Award, ShieldCheck, ArrowRight, Sparkles, CheckCircle
 } from 'lucide-react';
 
 export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
@@ -11,6 +11,26 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
   const [searchName, setSearchName] = useState('');
   const [selectedSpecialization, setSelectedSpecialization] = useState('all');
   const [consultModalAgent, setConsultModalAgent] = useState(null);
+
+  useEffect(() => {
+    if (consultModalAgent) {
+      document.body.style.overflow = 'hidden';
+      if (window.lenis) {
+        window.lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = '';
+      if (window.lenis) {
+        window.lenis.start();
+      }
+    }
+    return () => {
+      document.body.style.overflow = '';
+      if (window.lenis) {
+        window.lenis.start();
+      }
+    };
+  }, [consultModalAgent]);
 
   const filteredRealtors = useMemo(() => {
     let list = [...REALTORS];
@@ -25,8 +45,8 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
 
     if (searchName.trim()) {
       const q = searchName.toLowerCase();
-      list = list.filter(r => 
-        r.name.toLowerCase().includes(q) || 
+      list = list.filter(r =>
+        r.name.toLowerCase().includes(q) ||
         r.designation.toLowerCase().includes(q) ||
         r.specialization.toLowerCase().includes(q) ||
         r.location.toLowerCase().includes(q)
@@ -89,8 +109,8 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
           <div className="hanu-controls-secondary-row">
             <div className="hanu-select-filter">
               <label>Domain Specialization:</label>
-              <select 
-                value={selectedSpecialization} 
+              <select
+                value={selectedSpecialization}
                 onChange={(e) => setSelectedSpecialization(e.target.value)}
               >
                 <option value="all">All Specializations</option>
@@ -110,17 +130,26 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
           <div className="hanu-realtors-directory-grid">
             {filteredRealtors.map((agent) => (
               <div key={agent.id} className="hanu-realtor-profile-card">
-                
+
                 {/* Top Image & Badge */}
                 <div className="realtor-image-container">
-                  <img src={agent.image} alt={agent.name} loading="lazy" />
+                  <img
+                    src={agent.image}
+                    alt={agent.name}
+                    className="realtor-card-photo"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80';
+                    }}
+                  />
                   <div className="realtor-experience-pill">
                     <Award size={13} />
                     <span>{agent.experience}</span>
                   </div>
                   {agent.awards && (
-                    <div className="realtor-award-ribbon">
-                      <Sparkles size={12} />
+                    <div className="realtor-award-badge-top" title={agent.awards}>
+                      <Sparkles size={11} />
                       <span>{agent.awards}</span>
                     </div>
                   )}
@@ -160,32 +189,34 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
 
                   {/* Contact Buttons */}
                   <div className="realtor-contact-actions">
-                    <a 
-                      href={`tel:${agent.phone.replace(/\s+/g, '')}`} 
-                      className="realtor-call-btn"
-                      title="Direct Call"
-                    >
-                      <Phone size={15} />
-                      <span>Call Direct</span>
-                    </a>
+                    <div className="realtor-btn-split-row">
+                      <a
+                        href={`tel:${agent.phone.replace(/\s+/g, '')}`}
+                        className="realtor-action-call-btn"
+                        title="Direct Call"
+                      >
+                        <Phone size={14} />
+                        <span>Call Direct</span>
+                      </a>
 
-                    <a 
-                      href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="realtor-whatsapp-btn"
-                      title="WhatsApp Chat"
-                    >
-                      <MessageSquare size={15} />
-                      <span>WhatsApp</span>
-                    </a>
+                      <a
+                        href={`https://wa.me/918056035603?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="realtor-action-wa-btn"
+                        title="WhatsApp Chat"
+                      >
+                        <MessageSquare size={14} />
+                        <span>WhatsApp</span>
+                      </a>
+                    </div>
 
-                    <button 
-                      onClick={() => setConsultModalAgent(agent)} 
-                      className="realtor-book-btn"
+                    <button
+                      onClick={() => setConsultModalAgent(agent)}
+                      className="realtor-action-vip-btn"
                     >
                       <span>Book VIP Meeting</span>
-                      <ArrowRight size={13} />
+                      <ArrowRight size={14} />
                     </button>
                   </div>
 
@@ -207,8 +238,8 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
               <p>
                 Join India's most prestigious institutional brokerage. Benefit from our 30+ year reputation, 40-point legal backup, structured mentorship, and uncapped earning potential.
               </p>
-              <button 
-                onClick={() => onNavigatePage('careers')} 
+              <button
+                onClick={() => onNavigatePage('careers')}
                 className="hanu-btn-primary"
               >
                 <span>Explore Careers & Realtor Academy</span>
@@ -221,10 +252,20 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
 
       {/* Consultation Booking Modal */}
       {consultModalAgent && (
-        <div className="modal-overlay" onClick={() => setConsultModalAgent(null)}>
-          <div className="modal-content-box consult-modal-box" onClick={(e) => e.stopPropagation()}>
+        <div 
+          className="modal-overlay" 
+          onClick={() => setConsultModalAgent(null)}
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
+        >
+          <div 
+            className="modal-content-box consult-modal-box" 
+            onClick={(e) => e.stopPropagation()}
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
+          >
             <button className="modal-close-btn" onClick={() => setConsultModalAgent(null)}>✕</button>
-            
+
             <div className="consult-modal-head">
               <div className="badge-tag badge-gold">VIP Advisory Consultation</div>
               <h2>Book Private Meeting with {consultModalAgent.name}</h2>

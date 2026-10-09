@@ -12,6 +12,21 @@ export default function SmoothScroll({ children }) {
       wheelMultiplier: 1.05,
       touchMultiplier: 1.8,
       infinite: false,
+      prevent: (node) => {
+        if (!node) return false;
+        return (
+          node.classList?.contains('modal-overlay') ||
+          node.classList?.contains('modal-content-box') ||
+          node.classList?.contains('consult-modal-box') ||
+          node.closest?.('.modal-overlay') ||
+          node.closest?.('.modal-content-box') ||
+          node.closest?.('.consult-modal-box') ||
+          node.closest?.('[data-lenis-prevent]') ||
+          node.closest?.('.compare-modal-box') ||
+          node.closest?.('.compare-table-wrapper') ||
+          node.closest?.('.drawer-content')
+        );
+      }
     });
 
     window.lenis = lenis;

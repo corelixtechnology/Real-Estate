@@ -12,7 +12,7 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
   // Computations
   const annualRentalIncome = monthlyRent * 12;
   const grossRentalYield = ((annualRentalIncome / propertyPrice) * 100).toFixed(2);
-  
+
   // Future appreciated value
   const futureValue = Math.round(propertyPrice * Math.pow(1 + expectedAppreciation / 100, holdingYears));
   const totalCapitalGain = futureValue - propertyPrice;
@@ -50,19 +50,19 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
         <div className="roi-grid-container">
           {/* Controls Column */}
           <div className="roi-controls-col">
-            
+
             {/* Property Price */}
             <div className="roi-field-group">
               <div className="roi-field-label">
                 <span>Asset Acquisition Price</span>
                 <span className="roi-val-display">{formatINR(propertyPrice)}</span>
               </div>
-              <input 
-                type="range" 
-                min={10000000} 
-                max={300000000} 
-                step={2500000} 
-                value={propertyPrice} 
+              <input
+                type="range"
+                min={10000000}
+                max={300000000}
+                step={2500000}
+                value={propertyPrice}
                 onChange={(e) => {
                   const val = Number(e.target.value);
                   setPropertyPrice(val);
@@ -83,12 +83,12 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
                 <span>Estimated Monthly Rental</span>
                 <span className="roi-val-display">{formatINR(monthlyRent)} / mo</span>
               </div>
-              <input 
-                type="range" 
-                min={30000} 
-                max={1500000} 
-                step={10000} 
-                value={monthlyRent} 
+              <input
+                type="range"
+                min={30000}
+                max={1500000}
+                step={10000}
+                value={monthlyRent}
                 onChange={(e) => setMonthlyRent(Number(e.target.value))}
                 className="roi-slider"
               />
@@ -105,12 +105,12 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
                 <span>Annual Capital Appreciation Rate</span>
                 <span className="roi-val-display">{expectedAppreciation}% p.a.</span>
               </div>
-              <input 
-                type="range" 
-                min={4} 
-                max={20} 
-                step={0.5} 
-                value={expectedAppreciation} 
+              <input
+                type="range"
+                min={4}
+                max={20}
+                step={0.5}
+                value={expectedAppreciation}
                 onChange={(e) => setExpectedAppreciation(Number(e.target.value))}
                 className="roi-slider"
               />
@@ -149,7 +149,7 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
                 <TrendingUp size={20} color="var(--color-gold)" />
                 <h4>Projected Asset Valuation at Year {holdingYears}</h4>
               </div>
-              
+
               <div className="roi-mega-number">
                 {formatINR(futureValue)}
               </div>
@@ -181,9 +181,9 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
                 <span>Calculations based on 30+ year historical indices across Chennai, Bengaluru & Hyderabad prime corridors.</span>
               </div>
 
-              <a 
-                href="tel:+919840012345" 
-                className="hanu-btn-primary" 
+              <a
+                href="tel:+919840012345"
+                className="hanu-btn-primary"
                 style={{ width: '100%', marginTop: '16px', textAlign: 'center', justifyContent: 'center' }}
               >
                 <span>Consult Our Senior Wealth Advisory Desk</span>

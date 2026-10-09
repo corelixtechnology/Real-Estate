@@ -27,7 +27,7 @@ export default function PropertyCompareDrawer({
                 <div key={item.id} className="hanu-compare-thumb-pill">
                   <img src={item.images[0]} alt={item.title} />
                   <span className="thumb-title">{item.locality}</span>
-                  <button 
+                  <button
                     onClick={() => onRemoveFromCompare(item.id)}
                     className="thumb-remove"
                     title="Remove"
@@ -40,15 +40,15 @@ export default function PropertyCompareDrawer({
           </div>
 
           <div className="hanu-compare-dock-actions">
-            <button 
-              onClick={onClearCompare} 
+            <button
+              onClick={onClearCompare}
               className="hanu-btn-ghost-sm"
               title="Clear all"
             >
               Clear
             </button>
-            <button 
-              onClick={() => setIsOpenModal(true)} 
+            <button
+              onClick={() => setIsOpenModal(true)}
               className="hanu-btn-primary-sm"
             >
               <span>Compare Side-by-Side</span>
@@ -86,7 +86,7 @@ export default function PropertyCompareDrawer({
                       <th key={prop.id} className="property-col">
                         <div className="compare-card-head">
                           <img src={prop.images[0]} alt={prop.title} className="compare-card-img" />
-                          <button 
+                          <button
                             onClick={() => onRemoveFromCompare(prop.id)}
                             className="compare-card-remove-btn"
                             title="Remove"
@@ -96,9 +96,9 @@ export default function PropertyCompareDrawer({
                           <h4 className="compare-card-title">{prop.title}</h4>
                           <div className="compare-card-price">{prop.priceFormatted}</div>
                           <div className="compare-card-locality">{prop.locality}, {prop.cityName}</div>
-                          
+
                           <div className="compare-card-btn-group">
-                            <button 
+                            <button
                               onClick={() => {
                                 setIsOpenModal(false);
                                 onSelectProperty(prop);
