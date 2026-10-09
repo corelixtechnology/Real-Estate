@@ -23,6 +23,7 @@ import RoiCalculatorModal from './components/RoiCalculatorModal';
 import VirtualTourModal from './components/VirtualTourModal';
 import PropertyCompareDrawer from './components/PropertyCompareDrawer';
 import AuthModal from './components/AuthModal';
+import LeadCaptureModal from './components/LeadCaptureModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import SectionNavigator from './components/SectionNavigator';
 import SmoothScroll from './components/SmoothScroll';
@@ -50,6 +51,17 @@ export default function App() {
   const [isEmiCalcOpen, setIsEmiCalcOpen] = useState(false);
   const [isRoiCalcOpen, setIsRoiCalcOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+
+  // Automatically trigger Lead Details popup modal when the home screen is opened
+  useEffect(() => {
+    if (currentPage === 'home') {
+      const timer = setTimeout(() => {
+        setIsLeadModalOpen(true);
+      }, 700);
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage]);
 
   // Sync hash routing on mount and hash changes
   useEffect(() => {
@@ -140,6 +152,7 @@ export default function App() {
               onPerformSearch={handlePerformSearch}
               onSelectProperty={(prop) => setSelectedProperty(prop)}
               onOpenListProperty={() => handleNavigatePage('sell')}
+              onOpenLeadModal={() => setIsLeadModalOpen(true)}
               onNavigatePage={handleNavigatePage}
             />
           )}
@@ -286,6 +299,14 @@ export default function App() {
 
         {isAuthOpen && (
           <AuthModal onClose={() => setIsAuthOpen(false)} />
+        )}
+
+        {/* Lead Capture Popup Modal for Home Screen */}
+        {isLeadModalOpen && (
+          <LeadCaptureModal 
+            isOpen={isLeadModalOpen} 
+            onClose={() => setIsLeadModalOpen(false)} 
+          />
         )}
 
       </div>
