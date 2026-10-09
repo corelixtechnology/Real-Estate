@@ -20,16 +20,13 @@ export default function HeroSearch({
 }) {
   const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
 
-  const marketSegments = ['Residential', 'Commercial', 'Land / Plots', 'Agricultural'];
+  const marketSegments = ['Commercial'];
 
   const propertyTypesMap = {
-    'Residential': ['Flat', 'House / Villa', 'Penthouse', 'Residential Land'],
-    'Commercial': ['Office Space', 'Retail Showroom', 'Commercial Land', 'Warehouse'],
-    'Land / Plots': ['Residential Plot', 'Commercial Plot', 'Farm Land'],
-    'Agricultural': ['Agricultural Land', 'Estate / Plantation']
+    'Commercial': ['Office Space', 'Retail Showroom', 'Commercial Land', 'Warehouse', 'Pre-Leased Commercial', 'IT Park / Tech SEZ']
   };
 
-  const currentPropertyTypes = propertyTypesMap[marketSegment] || propertyTypesMap['Residential'];
+  const currentPropertyTypes = propertyTypesMap['Commercial'];
 
   const budgetList = searchTab === 'rent' ? BUDGET_RANGES_RENT : BUDGET_RANGES_BUY;
 

@@ -37,8 +37,8 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState('chennai');
   const [searchTab, setSearchTab] = useState('buy');
   const [searchQuery, setSearchQuery] = useState('');
-  const [marketSegment, setMarketSegment] = useState('Residential');
-  const [propertyType, setPropertyType] = useState('Flat / Apartment');
+  const [marketSegment, setMarketSegment] = useState('Commercial');
+  const [propertyType, setPropertyType] = useState('Office Space');
   const [budgetRange, setBudgetRange] = useState('Any Budget');
 
   // Compare Tray State (up to 3 properties)
