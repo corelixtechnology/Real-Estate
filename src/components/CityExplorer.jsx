@@ -58,10 +58,10 @@ export default function CityExplorer({ onSelectCity }) {
             </TextAnimate>
           </div>
           <TextAnimate animation="blurInUp" by="character" once as="h2" className="section-title">
-            Explore Properties By City
+            Explore Commercial Hubs By City
           </TextAnimate>
           <TextAnimate animation="fadeIn" by="line" as="p" className="section-subtitle" delay={0.15}>
-            From premier metropolitan penthouses in Chennai and Bengaluru to NRI cross-border advisory in California.
+            From Grade-A IT corridors in Chennai, Bengaluru & Hyderabad to NRI cross-border CRE advisory in Irvine, California.
           </TextAnimate>
 
         </div>
@@ -78,7 +78,12 @@ export default function CityExplorer({ onSelectCity }) {
                 if (elem) elem.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              <img src={card.image} alt={card.name} className="city-tile-img" />
+              <img 
+                src={card.image} 
+                alt={`${card.name} Commercial Real Estate, Grade-A IT Parks & Workspaces`} 
+                loading="lazy" 
+                className="city-tile-img" 
+              />
               <div className="city-tile-overlay">
                 <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'rgba(255,255,255,0.7)', fontWeight: 700 }}>
                   {card.state}

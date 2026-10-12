@@ -61,15 +61,15 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
       {/* Page Header */}
       <PageHeader
         badge="Senior Advisory Council"
-        title="Meet Our Senior Managing Directors & Realtors"
-        subtitle="150+ full-time institutional brokers upholding 30+ years of uncompromised fiduciary ethics, legal due diligence and local market mastery."
-        breadcrumb={[{ label: 'Our Realtors' }]}
+        title="Meet Our Senior Commercial Advisors & Brokers"
+        subtitle="150+ full-time institutional brokers upholding 30+ years of uncompromised fiduciary ethics, corporate lease negotiations and legal due diligence."
+        breadcrumb={[{ label: 'Our Commercial Advisors' }]}
         onNavigateHome={onNavigateHome}
         stats={[
-          { value: '150+', label: 'Full-Time Licensed Realtors' },
+          { value: '150+', label: 'Commercial CRE Advisors' },
           { value: '22 Yrs', label: 'Average Leadership Experience' },
           { value: '100%', label: 'In-House Fiduciary Standard' },
-          { value: '25,000+', label: 'Clients Represented' }
+          { value: '25,000+', label: 'Enterprises & Clients Represented' }
         ]}
       />
 
@@ -114,10 +114,10 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
                 onChange={(e) => setSelectedSpecialization(e.target.value)}
               >
                 <option value="all">All Specializations</option>
-                <option value="ultra-luxury">Ultra-Luxury Residential</option>
+                <option value="pre-leased">Pre-Leased Commercial & CRE Assets</option>
                 <option value="commercial">Commercial & Corporate Leasing</option>
-                <option value="nri">NRI Portfolio & Cross-Border Advisory</option>
-                <option value="joint ventures">Joint Ventures & Land Acquisition</option>
+                <option value="nri">NRI CRE Portfolio & Cross-Border Advisory</option>
+                <option value="joint ventures">Commercial Land Monetization & JVs</option>
               </select>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function AgentsPage({ onNavigateHome, onNavigatePage }) {
                       </a>
 
                       <a
-                        href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`}
+                        href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hello ${agent.name}, I would like to schedule a real estate advisory consultation with you.`)}`}
                         target="_blank"
                         rel="noreferrer"
                         className="realtor-action-wa-btn"

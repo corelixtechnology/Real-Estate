@@ -31,12 +31,13 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
     if (!quizGoal) return;
 
     let matchedService = SERVICES[0];
-    if (quizGoal === 'buy') matchedService = SERVICES[0];
-    else if (quizGoal === 'commercial') matchedService = SERVICES[1];
-    else if (quizGoal === 'nri') matchedService = SERVICES[2];
-    else if (quizGoal === 'jv') matchedService = SERVICES[3];
-    else if (quizGoal === 'legal') matchedService = SERVICES[4];
-    else if (quizGoal === 'relocation') matchedService = SERVICES[5];
+    if (quizGoal === 'flex') matchedService = SERVICES.find(s => s.id === 'flexible-coworking') || SERVICES[0];
+    else if (quizGoal === 'buy') matchedService = SERVICES.find(s => s.id === 'preleased-cre') || SERVICES[1];
+    else if (quizGoal === 'commercial') matchedService = SERVICES.find(s => s.id === 'commercial-leasing') || SERVICES[2];
+    else if (quizGoal === 'nri') matchedService = SERVICES.find(s => s.id === 'nri-services') || SERVICES[3];
+    else if (quizGoal === 'jv') matchedService = SERVICES.find(s => s.id === 'joint-ventures') || SERVICES[4];
+    else if (quizGoal === 'legal') matchedService = SERVICES.find(s => s.id === 'legal-valuation') || SERVICES[5];
+    else if (quizGoal === 'fitout') matchedService = SERVICES.find(s => s.id === 'enterprise-fitouts') || SERVICES[0];
 
     setQuizResult(matchedService);
   };
@@ -45,9 +46,9 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
     <div className="hanu-page-view hanu-services-page">
       {/* Page Header */}
       <PageHeader
-        badge="Institutional Real Estate Solutions"
-        title="Comprehensive 360° Real Estate Advisory"
-        subtitle="From ultra-luxury acquisitions and commercial headquarters to cross-border NRI stewardship and joint venture structuring."
+        badge="Institutional Commercial Solutions"
+        title="Comprehensive 360° Commercial Real Estate Advisory"
+        subtitle="From enterprise office leasing and flexible coworking suites to high-yield pre-leased commercial assets and commercial land joint ventures."
         breadcrumb={[{ label: 'Our Services' }]}
         onNavigateHome={onNavigateHome}
         stats={[
@@ -100,7 +101,7 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
 
               <div className="srv-actions-row">
                 <a
-                  href="tel:+919840012345"
+                  href="tel:+919422233344"
                   className="hanu-btn-primary"
                 >
                   <span>Book Private Consultation</span>
@@ -151,12 +152,13 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
                     className="hanu-input-field"
                   >
                     <option value="">Select your objective...</option>
-                    <option value="buy">Purchase or Sell a Luxury Home / Apartment / Villa</option>
+                    <option value="flex">Flexible Coworking, Hourly Meeting Rooms & Managed Suites</option>
                     <option value="commercial">Lease or Acquire Grade-A Commercial Office / Tech Park</option>
-                    <option value="nri">NRI Remote Property Management & Repatriation</option>
-                    <option value="jv">Monetize Prime Land via Joint Development (JV)</option>
-                    <option value="legal">Require 40-Point Title Audit & Scientific Property Valuation</option>
-                    <option value="relocation">Corporate / Expat Family Relocation Support</option>
+                    <option value="buy">Acquire High-Yield Pre-Leased Commercial Asset (8.5 - 10.5% Yield)</option>
+                    <option value="nri">NRI Remote Commercial Asset Stewardship</option>
+                    <option value="jv">Monetize Commercial Land via Joint Development (JV)</option>
+                    <option value="legal">Require 40-Point Title Audit & Scientific CRE Valuation</option>
+                    <option value="fitout">Enterprise Built-to-Suit & Turnkey Office Fitouts</option>
                   </select>
                 </div>
 
@@ -194,7 +196,7 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
                 <p>{quizResult.shortDesc}</p>
                 <div className="result-cta-row">
                   <a
-                    href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I completed the service matchmaker for "${quizResult.title}" in ${quizCity.toUpperCase()}. Please connect me with the Senior Director.`)}`}
+                    href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I completed the service matchmaker for "${quizResult.title}" in ${quizCity.toUpperCase()}. Please connect me with the Senior Director.`)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="hanu-btn-primary"
@@ -236,8 +238,8 @@ export default function ServicesPage({ onNavigateHome, onOpenListProperty, onNav
               </div>
             </div>
             <div className="nri-banner-action">
-              <a href="tel:+19493028877" className="hanu-btn-primary">
-                <span>Call USA Office: +1 (949) 302-8877</span>
+              <a href="tel:+919422233344" className="hanu-btn-primary">
+                <span>Call Advisory: +91 94222 33344</span>
               </a>
             </div>
           </div>

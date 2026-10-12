@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageSquare, Phone } from 'lucide-react';
 
 export default function FloatingActions() {
-  const whatsappUrl = "https://wa.me/912223334452?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20to%20inquire%20about%20properties.";
+  const whatsappUrl = "https://wa.me/919422233344?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20to%20inquire%20about%20commercial%20spaces%20and%20properties.";
 
   return (
     <div className="exact-floating-actions-container">
@@ -20,7 +20,7 @@ export default function FloatingActions() {
 
       {/* Phone Call Button */}
       <a
-        href="tel:+914443999000"
+        href="tel:+919422233344"
         className="exact-floating-btn exact-phone-btn"
         title="Call Helpline"
         aria-label="Call Helpline"

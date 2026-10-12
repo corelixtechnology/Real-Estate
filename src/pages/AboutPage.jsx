@@ -46,7 +46,7 @@ export default function AboutPage({ onNavigateHome, onNavigatePage }) {
                 <h3>C. Suresh Reddy</h3>
                 <div className="founder-role">Vice Chairman & Senior Managing Director</div>
                 <p className="founder-bio">
-                  A revered visionary in Indian commercial and luxury residential real estate. Over 32 years, Mr. C. Suresh Reddy has structured landmark transactions worth thousands of crores while championing uncompromised ethical standards and zero-litigation due diligence.
+                  A revered visionary in Indian commercial real estate and institutional corporate brokerage. Over 32 years, Mr. C. Suresh Reddy has structured landmark transactions worth thousands of crores while championing uncompromised ethical standards and zero-litigation due diligence.
                 </p>
                 <div className="founder-principles">
                   <div className="principle-item"><CheckCircle size={15} color="var(--color-primary)" /> 100% Transparent Documentation</div>
@@ -67,7 +67,7 @@ export default function AboutPage({ onNavigateHome, onNavigatePage }) {
                 <h3>Nirupama Reddy</h3>
                 <div className="founder-role">Executive Director & Head of International Services</div>
                 <p className="founder-bio">
-                  Leading our global NRI wealth advisory and cross-border transactions across India and the United States (Irvine, California). She has empowered thousands of overseas Indian families to invest securely in high-appreciating residential and commercial portfolios.
+                  Leading our global NRI wealth advisory and cross-border commercial transactions across India and the United States (Irvine, California). She has empowered thousands of overseas Indian families and institutional funds to invest securely in high-appreciating pre-leased and commercial portfolios.
                 </p>
                 <div className="founder-principles">
                   <div className="principle-item"><CheckCircle size={15} color="var(--color-primary)" /> Cross-Border FEMA & Tax Advisory</div>

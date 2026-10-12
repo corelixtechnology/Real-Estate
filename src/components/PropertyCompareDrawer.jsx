@@ -136,16 +136,16 @@ export default function PropertyCompareDrawer({
                     {compareList.map(p => <td key={p.id} className="feat-val">{p.areaSqft.toLocaleString()} sq.ft</td>)}
                   </tr>
                   <tr>
-                    <td className="feat-name">Bedrooms / BHK</td>
+                    <td className="feat-name">Capacity / Layout</td>
                     {compareList.map(p => <td key={p.id} className="feat-val">{p.bhk}</td>)}
                   </tr>
                   <tr>
-                    <td className="feat-name">Bathrooms</td>
-                    {compareList.map(p => <td key={p.id} className="feat-val">{p.bathrooms || 'N/A'}</td>)}
+                    <td className="feat-name">Executive Restrooms</td>
+                    {compareList.map(p => <td key={p.id} className="feat-val">{p.bathrooms ? `${p.bathrooms} Restrooms` : 'N/A'}</td>)}
                   </tr>
                   <tr>
-                    <td className="feat-name">Car Parks</td>
-                    {compareList.map(p => <td key={p.id} className="feat-val">{p.carparks || 'N/A'}</td>)}
+                    <td className="feat-name">Dedicated Parking</td>
+                    {compareList.map(p => <td key={p.id} className="feat-val">{p.carparks ? `${p.carparks} Bays` : 'N/A'}</td>)}
                   </tr>
                   <tr>
                     <td className="feat-name">Facing</td>

@@ -7,13 +7,13 @@ export default function ListPropertyModal({ onClose }) {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    userType: 'Owner',
-    intent: 'Sale',
-    propertyType: 'Flat / Apartment',
+    userType: 'Owner / Landlord',
+    intent: 'Lease',
+    propertyType: 'Commercial Office',
     city: 'Chennai',
     locality: '',
     address: '',
-    bhk: '3 BHK',
+    bhk: '25 - 60 Desks',
     areaSqft: '',
     expectedPrice: '',
     name: '',
@@ -45,7 +45,7 @@ export default function ListPropertyModal({ onClose }) {
           <X size={20} />
         </button>
 
-        <div style={{ padding: '36px' }}>
+        <div className="list-modal-body">
           {/* Header */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
@@ -105,7 +105,7 @@ export default function ListPropertyModal({ onClose }) {
                 <div>
                   <div style={{ marginBottom: '20px' }}>
                     <label className="form-label" style={{ display: 'block', marginBottom: '8px' }}>I am the:</label>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+                    <div className="list-modal-roles-grid">
                       {['Owner', 'Landlord / Lessor', 'Joint Venture Landowner', 'Authorized Builder'].map((role) => (
                         <div
                           key={role}
@@ -130,7 +130,7 @@ export default function ListPropertyModal({ onClose }) {
 
                   <div style={{ marginBottom: '20px' }}>
                     <label className="form-label" style={{ display: 'block', marginBottom: '8px' }}>I want to:</label>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px' }}>
+                    <div className="list-modal-intent-grid">
                       {['Sale (Sell Property)', 'Rent / Lease Out', 'Joint Development (JV)'].map((action) => (
                         <div
                           key={action}
@@ -203,19 +203,21 @@ export default function ListPropertyModal({ onClose }) {
 
                   <div className="form-grid-2">
                     <div className="form-field-block">
-                      <label className="form-label">Configuration (BHK / Rooms)</label>
+                      <label className="form-label">Capacity / Configuration</label>
                       <select
                         name="bhk"
                         className="form-input"
                         value={formData.bhk}
                         onChange={handleChange}
                       >
-                        <option value="1 BHK">1 BHK</option>
-                        <option value="2 BHK">2 BHK</option>
-                        <option value="3 BHK">3 BHK</option>
-                        <option value="4 BHK">4 BHK</option>
-                        <option value="5+ BHK Villa">5+ BHK Villa</option>
-                        <option value="Commercial / Land">Commercial / Land</option>
+                        <option value="10 - 25 Desks">10 – 25 Flex Workstations</option>
+                        <option value="25 - 60 Desks">25 – 60 Managed Suite</option>
+                        <option value="60 - 150 Desks">60 – 150 Corporate Floor</option>
+                        <option value="150+ Desks">150+ Desks / Standalone Tower</option>
+                        <option value="Meeting Suite">Meeting & Boardroom Suite</option>
+                        <option value="Retail Showroom">Retail Showroom / Bank Space</option>
+                        <option value="Warehouse">Logistics Warehouse / Fulfillment</option>
+                        <option value="Commercial Land">Commercial Land / Development</option>
                       </select>
                     </div>
 
@@ -271,7 +273,7 @@ export default function ListPropertyModal({ onClose }) {
                         type="tel"
                         name="phone"
                         required
-                        placeholder="e.g. +91 98400 12345"
+                        placeholder="e.g. +91 94222 33344"
                         className="form-input"
                         value={formData.phone}
                         onChange={handleChange}

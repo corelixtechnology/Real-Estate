@@ -70,7 +70,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="contact-item-title">General Helpline (Mylapore HQ)</div>
-                    <a href="tel:+914443999000" className="contact-item-val">+91 44 4399 9000</a>
+                    <a href="tel:+919422233344" className="contact-item-val">+91 94222 33344</a>
                   </div>
                 </div>
 
@@ -80,7 +80,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="contact-item-title">Official WhatsApp Desk</div>
-                    <a href="https://wa.me/912223334452" target="_blank" rel="noreferrer" className="contact-item-val">+91 80560 35603</a>
+                    <a href="https://wa.me/919422233344" target="_blank" rel="noreferrer" className="contact-item-val">+91 94222 33344</a>
                   </div>
                 </div>
 
@@ -152,7 +152,7 @@ export default function ContactSection() {
                       type="tel"
                       name="phone"
                       required
-                      placeholder="e.g. +91 98400 12345"
+                      placeholder="e.g. +91 94222 33344"
                       className="form-input"
                       value={formData.phone}
                       onChange={handleInputChange}
@@ -198,12 +198,13 @@ export default function ContactSection() {
                     value={formData.service}
                     onChange={handleInputChange}
                   >
-                    <option value="Buying Residential Property">Buying Residential Property</option>
-                    <option value="Renting / Leasing Home">Renting / Leasing Home</option>
-                    <option value="Selling / Monetizing Property">Selling / Monetizing Property</option>
-                    <option value="Commercial Office / Retail Space">Commercial Office / Retail Space</option>
-                    <option value="NRI Property Management">NRI Property Management</option>
-                    <option value="Joint Development / Land Valuation">Joint Development / Land Valuation</option>
+                    <option value="Commercial Office / IT Park Leasing">Commercial Office / IT Park Leasing</option>
+                    <option value="Flexible Coworking / Managed Suites">Flexible Coworking / Managed Suites</option>
+                    <option value="Hourly Meeting & Conference Suites">Hourly Meeting & Conference Suites</option>
+                    <option value="Pre-Leased Commercial Investment (8.5-10.5% Yield)">Pre-Leased Commercial Investment (8.5-10.5% Yield)</option>
+                    <option value="Retail Flagship / Logistics Warehouse">Retail Flagship / Logistics Warehouse</option>
+                    <option value="NRI Commercial Asset Stewardship">NRI Commercial Asset Stewardship</option>
+                    <option value="Commercial Land & Joint Development">Commercial Land & Joint Development</option>
                   </select>
                 </div>
 

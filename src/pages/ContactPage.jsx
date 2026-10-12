@@ -14,7 +14,7 @@ export default function ContactPage({ onNavigateHome }) {
   const [contactName, setContactName] = useState('');
   const [contactPhone, setContactPhone] = useState('');
   const [contactEmail, setContactEmail] = useState('');
-  const [contactNature, setContactNature] = useState('Buying a Luxury Residence');
+  const [contactNature, setContactNature] = useState('Commercial Office / IT Park Lease');
   const [contactMessage, setContactMessage] = useState('');
 
   const currentCityData = BRANCHES.find(b => b.city === selectedCityTab) || BRANCHES[0];
@@ -111,7 +111,7 @@ export default function ContactPage({ onNavigateHome }) {
                   </a>
 
                   <a
-                    href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hello Hanu Reddy Realty ${branch.name}, I would like to visit your office.`)}`}
+                    href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hello Hanu Reddy Realty ${branch.name}, I would like to visit your office.`)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="branch-wa-btn"
@@ -146,7 +146,7 @@ export default function ContactPage({ onNavigateHome }) {
                   <div className="point-icon"><Phone size={18} /></div>
                   <div>
                     <strong>Central Helpline (India)</strong>
-                    <div>+91 44 4399 9000 / +91 80560 35603</div>
+                    <div>+91 94222 33344</div>
                   </div>
                 </div>
 
@@ -154,7 +154,7 @@ export default function ContactPage({ onNavigateHome }) {
                   <div className="point-icon"><Phone size={18} /></div>
                   <div>
                     <strong>USA Cross-Border Desk (Irvine, CA)</strong>
-                    <div>+1 (949) 302-8877</div>
+                    <div>+91 94222 33344</div>
                   </div>
                 </div>
 
@@ -197,7 +197,7 @@ export default function ContactPage({ onNavigateHome }) {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98400 XXXXX"
+                        placeholder="+91 94222 33344"
                         value={contactPhone}
                         onChange={(e) => setContactPhone(e.target.value)}
                         className="hanu-input-field"
@@ -225,13 +225,14 @@ export default function ContactPage({ onNavigateHome }) {
                         onChange={(e) => setContactNature(e.target.value)}
                         className="hanu-input-field"
                       >
-                        <option value="Buying a Luxury Residence">Buying a Luxury Residence</option>
-                        <option value="Selling / Monetizing Property">Selling / Monetizing Property</option>
-                        <option value="Luxury Rental / Corporate Lease">Luxury Rental / Corporate Lease</option>
-                        <option value="Joint Development / Land JV">Joint Development / Land JV</option>
-                        <option value="NRI Asset Management">NRI Asset Management</option>
-                        <option value="Commercial Office Leasing">Commercial Office Leasing</option>
-                        <option value="Legal Title 40-Point Audit">Legal Title 40-Point Audit</option>
+                        <option value="Commercial Office / IT Park Lease">Commercial Office / IT Park Lease</option>
+                        <option value="Flexible Coworking & Team Desks">Flexible Coworking & Team Desks</option>
+                        <option value="Hourly Meeting & Conference Suites">Hourly Meeting & Conference Suites</option>
+                        <option value="Pre-Leased Commercial Investment (8.5-10.5% Yield)">Pre-Leased Commercial Investment (8.5-10.5% Yield)</option>
+                        <option value="List / Lease My Commercial Asset">List / Lease My Commercial Asset</option>
+                        <option value="Commercial Land Monetization & JV">Commercial Land Monetization & JV</option>
+                        <option value="NRI Commercial Asset Stewardship">NRI Commercial Asset Stewardship</option>
+                        <option value="CRE 40-Point Title Due Diligence">CRE 40-Point Title Due Diligence</option>
                       </select>
                     </div>
                   </div>

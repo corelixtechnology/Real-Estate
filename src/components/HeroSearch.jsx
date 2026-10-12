@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Building2, Home, IndianRupee, ChevronDown } from 'lucide-react';
+import { Search, MapPin, Building2, Building, Briefcase, ChevronDown } from 'lucide-react';
 import { CITIES, BUDGET_RANGES_BUY, BUDGET_RANGES_RENT } from '../data/mockData';
 import { TextAnimate } from '@/registry/magicui/text-animate';
 
@@ -23,7 +23,18 @@ export default function HeroSearch({
   const marketSegments = ['Commercial'];
 
   const propertyTypesMap = {
-    'Commercial': ['Office Space', 'Retail Showroom', 'Commercial Land', 'Warehouse', 'Pre-Leased Commercial', 'IT Park / Tech SEZ']
+    'Commercial': [
+      'All Types',
+      'Commercial Office',
+      'Flexible Coworking & Desks',
+      'Meeting & Conference Rooms',
+      'Managed Office Suites',
+      'Virtual Office & GST Reg',
+      'Retail Showroom',
+      'Warehouse',
+      'Pre-Leased Commercial',
+      'IT Park / Tech SEZ'
+    ]
   };
 
   const currentPropertyTypes = propertyTypesMap['Commercial'];
@@ -39,18 +50,18 @@ export default function HeroSearch({
         <div className="exact-hero-badge">
           <span className="badge-dot">●</span>
           <TextAnimate animation="blurInUp" by="character" once as="span">
-            BUY, SELL OR RENT, WITH CONFIDENCE
+            GRADE-A COMMERCIAL REAL ESTATE & FLEXIBLE WORKSPACES
           </TextAnimate>
         </div>
 
-        {/* Hero Main Headline - Blur In Up by Character */}
+        {/* Hero Main Headline */}
         <TextAnimate animation="blurInUp" by="character" once as="h1" className="exact-hero-title">
-          Find Your Ideal Property With Trusted Real Estate Experts
+          India’s Premier Commercial Real Estate & Flexible Workspaces Platform
         </TextAnimate>
 
-        {/* Hero Subtitle Description - Fade In by Line */}
+        {/* Hero Subtitle Description */}
         <TextAnimate animation="fadeIn" by="line" as="p" className="exact-hero-description" delay={0.2}>
-          Professional real estate services across Chennai, Bengaluru, Hyderabad, Pune, Coimbatore, Mysuru, Visakhapatnam and Irvine, California, backed by decades of local market expertise.
+          Grade-A corporate office towers, flexible coworking hubs, hourly smart meeting suites, and high-yield pre-leased commercial assets across prime business districts and IT corridors.
         </TextAnimate>
 
         {/* Dark Glass Search Card */}
@@ -62,19 +73,19 @@ export default function HeroSearch({
                 className={`exact-tab-btn ${searchTab === 'all' ? 'active' : ''}`}
                 onClick={() => setSearchTab('all')}
               >
-                All
-              </button>
-              <button
-                className={`exact-tab-btn ${searchTab === 'buy' ? 'active' : ''}`}
-                onClick={() => setSearchTab('buy')}
-              >
-                Buy
+                All Workspaces
               </button>
               <button
                 className={`exact-tab-btn ${searchTab === 'rent' ? 'active' : ''}`}
                 onClick={() => setSearchTab('rent')}
               >
-                Rent
+                Lease & Coworking
+              </button>
+              <button
+                className={`exact-tab-btn ${searchTab === 'buy' ? 'active' : ''}`}
+                onClick={() => setSearchTab('buy')}
+              >
+                Buy & Pre-Leased
               </button>
             </div>
 
@@ -111,12 +122,12 @@ export default function HeroSearch({
           <div className="exact-search-filters-grid">
             {/* 1. Location Input */}
             <div className="exact-filter-col">
-              <label className="exact-filter-label">LOCATION</label>
+              <label className="exact-filter-label">LOCATION / TECH PARK</label>
               <div className="exact-filter-box">
                 <MapPin size={16} className="exact-field-icon" />
                 <input
                   type="text"
-                  placeholder="Enter location"
+                  placeholder="e.g. OMR, Indiranagar, Financial District"
                   className="exact-filter-input"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -127,9 +138,9 @@ export default function HeroSearch({
               </div>
             </div>
 
-            {/* 2. Market Segment */}
+            {/* 2. Workspace Category */}
             <div className="exact-filter-col">
-              <label className="exact-filter-label">MARKET SEGMENT</label>
+              <label className="exact-filter-label">CATEGORY</label>
               <div className="exact-filter-box">
                 <Building2 size={16} className="exact-field-icon" />
                 <select
@@ -148,11 +159,11 @@ export default function HeroSearch({
               </div>
             </div>
 
-            {/* 3. Property Type */}
+            {/* 3. Space Type */}
             <div className="exact-filter-col">
-              <label className="exact-filter-label">PROPERTY TYPE</label>
+              <label className="exact-filter-label">SPACE TYPE</label>
               <div className="exact-filter-box">
-                <Home size={16} className="exact-field-icon" />
+                <Building size={16} className="exact-field-icon" />
                 <select
                   className="exact-filter-select"
                   value={propertyType}
@@ -168,7 +179,7 @@ export default function HeroSearch({
 
             {/* 4. Budget */}
             <div className="exact-filter-col">
-              <label className="exact-filter-label">BUDGET</label>
+              <label className="exact-filter-label">BUDGET / TIER</label>
               <div className="exact-filter-box">
                 <span className="exact-currency-symbol">₹</span>
                 <select
@@ -188,7 +199,7 @@ export default function HeroSearch({
             <div className="exact-btn-col">
               <button className="exact-search-submit-btn" onClick={onPerformSearch}>
                 <Search size={17} />
-                <span>Search Properties</span>
+                <span>Search Workspaces</span>
               </button>
             </div>
           </div>

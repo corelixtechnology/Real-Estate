@@ -26,12 +26,12 @@ export default function AuthModal({ onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content-box" style={{ maxWidth: '460px' }} onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content-box auth-modal-box" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose}>
           <X size={18} />
         </button>
 
-        <div style={{ padding: '36px 30px' }}>
+        <div className="auth-modal-body">
           {/* Brand Header */}
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
             <TextAnimate
@@ -118,7 +118,7 @@ export default function AuthModal({ onClose }) {
                         <input
                           type="tel"
                           required
-                          placeholder="98400 12345"
+                          placeholder="94222 33344"
                           className="form-input"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}

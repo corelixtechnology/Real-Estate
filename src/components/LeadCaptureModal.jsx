@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   X, CheckCircle2, ShieldCheck, Sparkles, Building2, Phone, Mail, User, 
   MapPin, IndianRupee, Clock, ArrowRight, MessageSquare, Check, Award,
-  Briefcase, Landmark, Layers, TrendingUp, Star, Shield
+  Briefcase, Landmark, Layers, TrendingUp, Star, Shield, Users, Laptop
 } from 'lucide-react';
 import { TextAnimate } from '@/registry/magicui/text-animate';
 
@@ -49,6 +49,8 @@ export default function LeadCaptureModal({ isOpen = true, onClose, onSubmitSucce
 
   const transactionModes = [
     { key: 'Lease / Rent Space', label: 'Lease / Rent Office' },
+    { key: 'Flexible Coworking', label: 'Coworking / Day Pass' },
+    { key: 'Meeting Rooms', label: 'Hourly Meeting Room' },
     { key: 'Commercial Purchase', label: 'Commercial Purchase' },
     { key: 'Pre-Leased (High ROI)', label: 'Pre-Leased (7-10% Yield)' },
     { key: 'List Commercial Space', label: 'List My Commercial Space' }
@@ -56,9 +58,13 @@ export default function LeadCaptureModal({ isOpen = true, onClose, onSubmitSucce
 
   const commercialCategories = [
     { key: 'Corporate Office / IT Park', label: 'Corporate Office / IT Park', desc: 'Warm Shell & Plug & Play', icon: Building2 },
-    { key: 'Retail Showroom', label: 'Retail & Showrooms', desc: 'High Street & Prime Malls', icon: Landmark },
+    { key: 'Coworking & Flexible Desks', label: 'Coworking & Day Passes', desc: 'Hot Desks & Zero Lock-in', icon: Laptop },
+    { key: 'Meeting & Conference Rooms', label: 'Meeting & Boardrooms', desc: 'Hourly VC Rooms (4-25 seats)', icon: Clock },
+    { key: 'Managed Team Office Suites', label: 'Managed Team Suites', desc: 'Turnkey 10-150 Seats Zero Capex', icon: Users },
+    { key: 'Virtual Office & GST Reg', label: 'Virtual Office (GST/MCA)', desc: 'Prime Business Address & Mail', icon: Landmark },
+    { key: 'Retail Showroom', label: 'Retail & Showrooms', desc: 'High Street & Prime Malls', icon: TrendingUp },
     { key: 'Warehouse & Logistics', label: 'Warehousing & Logistics', desc: 'Grade-A Logistics Parks', icon: Layers },
-    { key: 'Commercial Land / Plots', label: 'Commercial Land / Plots', desc: 'Mixed-Use & Tech Corridors', icon: Briefcase }
+    { key: 'Commercial Land & Development', label: 'Commercial Land & Development', desc: 'Mixed-Use & Tech Corridors', icon: Briefcase }
   ];
 
   const spaceSizeOptions = [
@@ -241,7 +247,7 @@ export default function LeadCaptureModal({ isOpen = true, onClose, onSubmitSucce
               </button>
 
               <a
-                href={`https://wa.me/919840046555?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I need commercial real estate advisory for ${formData.commercialType} in ${formData.preferredCity}. (Name: ${formData.fullName}).`)}`}
+                href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hi Hanu Reddy Realty, I need commercial real estate advisory for ${formData.commercialType} in ${formData.preferredCity}. (Name: ${formData.fullName}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
@@ -554,7 +560,7 @@ export default function LeadCaptureModal({ isOpen = true, onClose, onSubmitSucce
                           type="tel"
                           name="phone"
                           required
-                          placeholder="98400 12345"
+                          placeholder="94222 33344"
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="form-input lead-input-enhanced"

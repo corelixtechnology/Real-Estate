@@ -182,7 +182,7 @@ export default function RoiCalculatorModal({ onClose, defaultPrice = 50000000 })
               </div>
 
               <a
-                href="tel:+919840012345"
+                href="tel:+919422233344"
                 className="hanu-btn-primary"
                 style={{ width: '100%', marginTop: '16px', textAlign: 'center', justifyContent: 'center' }}
               >

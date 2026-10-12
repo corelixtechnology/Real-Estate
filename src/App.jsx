@@ -28,6 +28,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import SectionNavigator from './components/SectionNavigator';
 import SmoothScroll from './components/SmoothScroll';
 import ScrollProgress from './components/ScrollProgress';
+import SEOHead from './components/SEOHead';
 
 export default function App() {
   // Page Routing State
@@ -121,6 +122,7 @@ export default function App() {
 
   return (
     <SmoothScroll>
+      <SEOHead currentPage={currentPage} />
       <ScrollProgress />
       <div className="app-container">
 

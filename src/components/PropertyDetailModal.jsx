@@ -77,10 +77,10 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
         </div>
 
         {/* Modal Content Body */}
-        <div style={{ padding: '36px' }}>
+        <div className="property-modal-body">
           {/* Header Row: Title & Price */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px', marginBottom: '24px' }}>
-            <div style={{ maxWidth: '620px' }}>
+          <div className="property-modal-header-row">
+            <div className="property-modal-header-info">
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-primary)', fontWeight: 700, fontSize: '0.9rem', marginBottom: '6px' }}>
                 <MapPin size={16} />
                 <span>{property.locality}, {property.cityName}</span>
@@ -101,11 +101,11 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
             </div>
 
 
-            <div style={{ textAlign: 'right', background: 'var(--color-bg-alt)', padding: '16px 24px', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)' }}>
+            <div className="property-modal-price-box">
               <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
                 {property.listingType === 'rent' ? 'Monthly Rental' : 'Investment Price'}
               </div>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', fontWeight: 800, color: 'var(--color-primary)' }}>
+              <div className="property-modal-price-main">
                 {property.priceFormatted}
               </div>
               <div style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>
@@ -115,31 +115,22 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
           </div>
 
           {/* Key Specifications Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '16px',
-            background: 'var(--color-bg-main)',
-            border: '1px solid var(--color-border)',
-            borderRadius: 'var(--radius-md)',
-            padding: '20px',
-            marginBottom: '32px'
-          }}>
+          <div className="property-modal-specs-grid">
             <div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>BEDROOMS</div>
-              <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-dark)' }}>{property.bhk}</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>WORKSPACE CONFIGURATION</div>
+              <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-dark)' }}>{property.bhk}</div>
             </div>
             <div>
               <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>SUPER BUILT-UP AREA</div>
-              <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-dark)' }}>{property.areaSqft.toLocaleString()} sq.ft</div>
+              <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-dark)' }}>{property.areaSqft.toLocaleString()} sq.ft</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>BATHROOMS</div>
-              <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-dark)' }}>{property.bathrooms} Luxury Baths</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>EXECUTIVE RESTROOMS</div>
+              <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-dark)' }}>{property.bathrooms} Restrooms</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>PARKING</div>
-              <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--color-dark)' }}>{property.carparks} Covered Bays</div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', fontWeight: 700 }}>DEDICATED PARKING</div>
+              <div style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--color-dark)' }}>{property.carparks} Parking Bays</div>
             </div>
           </div>
 
@@ -188,17 +179,9 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
           </div>
 
           {/* Assigned Realtor & Schedule Visit Box */}
-          <div style={{
-            background: 'linear-gradient(135deg, #1c1c22 0%, #291819 100%)',
-            borderRadius: 'var(--radius-lg)',
-            padding: '30px',
-            color: '#ffffff',
-            display: 'grid',
-            gridTemplateColumns: '1.2fr 1.8fr',
-            gap: '30px'
-          }}>
+          <div className="property-modal-realtor-box">
             {/* Realtor Info */}
-            <div style={{ borderRight: '1px solid rgba(255,255,255,0.15)', paddingRight: '20px' }}>
+            <div className="property-modal-realtor-col">
               <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#ffc278', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>
                 ASSIGNED SENIOR REALTOR
               </div>
@@ -218,11 +201,11 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
               {/* Direct Quick Action Buttons */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <a
-                  href={`https://wa.me/912223334452?text=${whatsappMessage}`}
+                  href={`https://wa.me/919422233344?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noreferrer"
                   className="btn"
-                  style={{ background: '#25D366', color: '#ffffff', fontSize: '0.88rem', padding: '10px 16px' }}
+                  style={{ background: '#25D366', color: '#ffffff', fontSize: '0.88rem', padding: '10px 16px', justifyContent: 'center' }}
                 >
                   <MessageSquare size={16} />
                   <span>Instant WhatsApp Enquiry</span>
@@ -230,7 +213,7 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
                 <a
                   href={`tel:${property.agent.phone}`}
                   className="btn"
-                  style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', fontSize: '0.88rem', padding: '10px 16px' }}
+                  style={{ background: 'rgba(255,255,255,0.12)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.2)', fontSize: '0.88rem', padding: '10px 16px', justifyContent: 'center' }}
                 >
                   <Phone size={16} />
                   <span>Call {property.agent.phone}</span>
@@ -239,7 +222,7 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
             </div>
 
             {/* Schedule Visit Form */}
-            <div>
+            <div className="property-modal-schedule-col">
               <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#ffc278', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>
                 REQUEST PRIVATE SITE INSPECTION
               </div>
@@ -253,7 +236,7 @@ export default function PropertyDetailModal({ property, onClose, onOpenEmiCalc }
                 </div>
               ) : (
                 <form onSubmit={handleScheduleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                  <div className="property-modal-form-inputs">
                     <input
                       type="text"
                       placeholder="Your Full Name *"

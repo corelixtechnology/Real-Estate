@@ -70,7 +70,7 @@ export default function CareersPage({ onNavigateHome }) {
             <div className="benefit-card">
               <div className="benefit-icon-wrap"><TrendingUp size={24} /></div>
               <h3>Uncapped High-Yield Commissions</h3>
-              <p>Earn industry-leading commission splits on multi-crore residential estates, commercial office towers and land monetization joint ventures.</p>
+              <p>Earn industry-leading commission splits on multi-crore corporate tech campuses, commercial office towers, managed workspaces and land monetization joint ventures.</p>
             </div>
 
             <div className="benefit-card">

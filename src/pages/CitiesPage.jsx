@@ -124,8 +124,8 @@ export default function CitiesPage({ onNavigateHome, onSelectCityAndSearch }) {
               </div>
             </div>
             <div className="cross-border-cta">
-              <a href="tel:+19493028877" className="hanu-btn-primary">
-                <span>Connect with Irvine, CA Directorate</span>
+              <a href="tel:+919422233344" className="hanu-btn-primary">
+                <span>Connect with Advisory: +91 94222 33344</span>
                 <ArrowRight size={15} />
               </a>
             </div>

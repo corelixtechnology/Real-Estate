@@ -9,10 +9,10 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
   if (!property) return null;
 
   const ROOMS = [
-    { id: 'living', name: 'Grand Living & Foyer', image: property.images[0] || 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80', description: 'Italian Botticino marble flooring with soaring 12ft double-height ceiling and floor-to-ceiling glass fenestrations.' },
-    { id: 'master', name: 'Master Presidential Suite', image: property.images[1] || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80', description: 'Expansive private suite with walk-in teak wardrobe, private morning terrace and marble ensuite jacuzzi.' },
-    { id: 'deck', name: 'Skyline Terrace / Deck', image: property.images[2] || 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80', description: 'Open-to-sky panoramic lounge with landscaped planters, glass balustrades and sunset horizon vistas.' },
-    { id: 'kitchen', name: 'Gourmet Chef Kitchen', image: property.images[3] || 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80', description: 'German Poggenpohl modular cabinetry with built-in Miele appliances and quartz prep island.' }
+    { id: 'living', name: 'Grand Corporate Foyer & Reception', image: property.images[0] || 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80', description: 'Double-height corporate reception with biometric turnstiles, guest lounge and executive concierge desk.' },
+    { id: 'master', name: 'Executive Boardroom Suite (4K VC)', image: property.images[1] || 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80', description: 'Acoustic-treated 24-seater boardroom with motorized 4K video conference display and Herman Miller seating.' },
+    { id: 'deck', name: 'Open Collaboration Workstation Bay', image: property.images[2] || 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80', description: 'Ergonomic linear workstations with CAT-6 dual cabling, sit-stand desks, and natural daylight penetration.' },
+    { id: 'kitchen', name: 'Cafeteria & Collaboration Lounge', image: property.images[3] || 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80', description: 'Fully equipped cafeteria with specialty espresso bar, phone booths and collaborative high-table seating.' }
   ];
 
   const currentRoomData = ROOMS.find(r => r.id === activeRoom) || ROOMS[0];
@@ -116,7 +116,7 @@ export default function VirtualTourModal({ property, onClose, onOpenSchedule }) 
             </div>
 
             <a
-              href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I just viewed the 360 virtual tour for ${property.title} (${property.id}). I would like to arrange an in-person private viewing.`)}`}
+              href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hi, I just viewed the 360 virtual tour for ${property.title} (${property.id}). I would like to arrange an in-person private viewing.`)}`}
               target="_blank"
               rel="noreferrer"
               className="hanu-btn-primary"

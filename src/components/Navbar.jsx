@@ -80,9 +80,9 @@ export default function Navbar({
             <span className="strip-text">Zero Litigation Legal Due Diligence Standard</span>
           </div>
           <div className="top-strip-right">
-            <a href="tel:+914443999000" className="strip-phone">
+            <a href="tel:+919422233344" className="strip-phone">
               <Phone size={12} />
-              <span>Central Helpline: +91 44 4399 9000</span>
+              <span>Central Helpline: +91 94222 33344</span>
             </a>
             <span className="strip-dot">•</span>
             <span className="strip-global">USA Hub: Irvine, California</span>
@@ -111,7 +111,7 @@ export default function Navbar({
               Hanu Reddy Realty<span className="hanu-registered-symbol">®</span>
             </span>
             <span className="hanu-brand-subtag">
-              EST. 1993 • PRIME REAL ESTATE
+              EST. 1993 • COMMERCIAL & WORKSPACES
             </span>
           </div>
         </a>
@@ -127,55 +127,20 @@ export default function Navbar({
             <span>Home</span>
           </button>
 
-          {/* About Dropdown */}
-          <div
-            className="hanu-nav-item-dropdown"
-            ref={aboutRef}
-            onMouseEnter={() => setAboutDropdownOpen(true)}
-            onMouseLeave={() => setAboutDropdownOpen(false)}
-          >
-            <button
-              className={`hanu-nav-link ${currentPage === 'about' || currentPage === 'cities' ? 'active' : ''}`}
-              onClick={() => handleNav('about')}
-            >
-              <span>About</span>
-              <ChevronDown size={13} className={`hanu-chevron ${aboutDropdownOpen ? 'open' : ''}`} />
-            </button>
-
-            {aboutDropdownOpen && (
-              <div className="hanu-dropdown-menu luxury-dropdown-box">
-                <div className="hanu-dropdown-item" onClick={() => handleNav('about')}>
-                  <div className="dropdown-icon-bubble"><Sparkles size={16} /></div>
-                  <div className="dropdown-item-texts">
-                    <strong>Our Legacy & Founders</strong>
-                    <span>30+ years of uncompromised honesty & fiduciary ethics</span>
-                  </div>
-                </div>
-                <div className="hanu-dropdown-item" onClick={() => handleNav('cities')}>
-                  <div className="dropdown-icon-bubble"><Globe size={16} /></div>
-                  <div className="dropdown-item-texts">
-                    <strong>City Network & Metros</strong>
-                    <span>Chennai, Bengaluru, Hyderabad, Coimbatore, USA</span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
           {/* Buy Link */}
           <button
             className={`hanu-nav-link ${currentPage === 'buy' ? 'active' : ''}`}
             onClick={() => handleNav('buy')}
           >
-            <span>Buy</span>
+            <span>Buy & Pre-Leased</span>
           </button>
 
-          {/* Rent Link */}
+          {/* Lease Link */}
           <button
             className={`hanu-nav-link ${currentPage === 'rent' ? 'active' : ''}`}
             onClick={() => handleNav('rent')}
           >
-            <span>Rent</span>
+            <span>Lease & Workspaces</span>
           </button>
 
           {/* Services Dropdown */}
@@ -186,7 +151,7 @@ export default function Navbar({
             onMouseLeave={() => setServicesDropdownOpen(false)}
           >
             <button
-              className={`hanu-nav-link ${currentPage === 'services' || currentPage === 'calq' ? 'active' : ''}`}
+              className={`hanu-nav-link ${currentPage === 'services' ? 'active' : ''}`}
               onClick={() => handleNav('services')}
             >
               <span>Services</span>
@@ -198,8 +163,8 @@ export default function Navbar({
                 <div className="hanu-dropdown-item" onClick={() => handleNav('services')}>
                   <div className="dropdown-icon-bubble"><Building2 size={16} /></div>
                   <div className="dropdown-item-texts">
-                    <strong>360° Real Estate Solutions</strong>
-                    <span>Residential luxury acquisitions & commercial leasing</span>
+                    <strong>Commercial & Workplace Advisory</strong>
+                    <span>Corporate office leases, managed suites & pre-leased CRE</span>
                   </div>
                 </div>
 
@@ -239,18 +204,45 @@ export default function Navbar({
             onClick={() => handleNav('calq')}
             title="CalQ — Commercial Space & Cost Calculator"
           >
-            <Calculator size={15} className="calq-btn-icon" />
+            <Calculator size={14} className="calq-btn-icon" />
             <span className="calq-btn-text">CalQ</span>
             <span className="calq-pulse-dot" />
           </button>
 
-          {/* List your Properties (Dedicated Page) */}
-          <button
-            className={`hanu-nav-link ${currentPage === 'sell' ? 'active' : ''}`}
-            onClick={() => handleNav('sell')}
+          {/* About Dropdown */}
+          <div
+            className="hanu-nav-item-dropdown"
+            ref={aboutRef}
+            onMouseEnter={() => setAboutDropdownOpen(true)}
+            onMouseLeave={() => setAboutDropdownOpen(false)}
           >
-            <span>List your Properties</span>
-          </button>
+            <button
+              className={`hanu-nav-link ${currentPage === 'about' || currentPage === 'cities' ? 'active' : ''}`}
+              onClick={() => handleNav('about')}
+            >
+              <span>About</span>
+              <ChevronDown size={13} className={`hanu-chevron ${aboutDropdownOpen ? 'open' : ''}`} />
+            </button>
+
+            {aboutDropdownOpen && (
+              <div className="hanu-dropdown-menu luxury-dropdown-box">
+                <div className="hanu-dropdown-item" onClick={() => handleNav('about')}>
+                  <div className="dropdown-icon-bubble"><Sparkles size={16} /></div>
+                  <div className="dropdown-item-texts">
+                    <strong>Our Legacy & Founders</strong>
+                    <span>30+ years of uncompromised honesty & fiduciary ethics</span>
+                  </div>
+                </div>
+                <div className="hanu-dropdown-item" onClick={() => handleNav('cities')}>
+                  <div className="dropdown-icon-bubble"><Globe size={16} /></div>
+                  <div className="dropdown-item-texts">
+                    <strong>City Network & Metros</strong>
+                    <span>Chennai, Bengaluru, Hyderabad, Coimbatore, USA</span>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Agents Dropdown */}
           <div
@@ -301,13 +293,20 @@ export default function Navbar({
 
           <button
             className="hanu-list-prop-quick-btn"
-            onClick={() => handleNav('sell')}
+            onClick={() => {
+              if (onOpenListProperty) {
+                onOpenListProperty();
+              } else {
+                handleNav('sell');
+              }
+            }}
           >
             <PlusCircle size={15} />
             <span>List Property</span>
           </button>
 
           <button className="hanu-auth-btn-luxury" onClick={onOpenAuth}>
+            <User size={14} />
             <span>Register / Login</span>
           </button>
 
@@ -325,7 +324,7 @@ export default function Navbar({
 
           {/* Quick Mobile Call Shortcut */}
           <a
-            href="tel:+914443999000"
+            href="tel:+919422233344"
             className="hanu-mobile-quick-phone-btn"
             title="Call Central Helpline"
             aria-label="Call Central Helpline"
@@ -395,7 +394,7 @@ export default function Navbar({
               <span>List Property</span>
             </button>
             <a
-              href="https://wa.me/912223334452"
+              href="https://wa.me/919422233344"
               target="_blank"
               rel="noreferrer"
               className="mobile-quick-pill whatsapp"
@@ -418,8 +417,8 @@ export default function Navbar({
               >
                 <div className="mobile-link-icon-bubble"><Home size={18} /></div>
                 <div className="mobile-link-text-stack">
-                  <strong>Home Showcase</strong>
-                  <span>Featured prime residences & listings</span>
+                  <strong>Commercial Showcase</strong>
+                  <span>Prime Grade-A towers & flexible workspaces</span>
                 </div>
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
@@ -430,8 +429,8 @@ export default function Navbar({
               >
                 <div className="mobile-link-icon-bubble"><Building2 size={18} /></div>
                 <div className="mobile-link-text-stack">
-                  <strong>Buy Luxury Properties</strong>
-                  <span>Verified villas, penthouses & premium plots</span>
+                  <strong>Commercial Buy & Pre-Leased</strong>
+                  <span>Grade-A tech floors, pre-leased assets & commercial land</span>
                 </div>
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
@@ -442,8 +441,8 @@ export default function Navbar({
               >
                 <div className="mobile-link-icon-bubble"><Key size={18} /></div>
                 <div className="mobile-link-text-stack">
-                  <strong>Rent & Commercial Leases</strong>
-                  <span>High-yield rentals & prime corporate spaces</span>
+                  <strong>Lease & Workspaces</strong>
+                  <span>Flexible coworking, managed suites & corporate leases</span>
                 </div>
                 <ArrowRight size={14} className="mobile-link-arrow" />
               </button>
@@ -561,9 +560,9 @@ export default function Navbar({
 
           {/* Drawer Bottom Direct Contact Strip */}
           <div className="mobile-drawer-bottom-actions">
-            <a href="tel:+914443999000" className="mobile-call-action-btn">
+            <a href="tel:+919422233344" className="mobile-call-action-btn">
               <Phone size={16} />
-              <span>Helpline: +91 44 4399 9000</span>
+              <span>Helpline: +91 94222 33344</span>
             </a>
 
             <div className="mobile-drawer-trust-note">

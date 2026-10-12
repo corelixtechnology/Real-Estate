@@ -63,11 +63,11 @@ export default function HomePage({
                 <Building2 size={24} />
               </div>
               <div className="quick-card-content">
-                <div className="quick-card-tag">Purchase</div>
-                <h3>Explore Luxury Estates for Sale</h3>
-                <p>Curated villas, sky mansions & verified plots across prime metros.</p>
+                <div className="quick-card-tag">CRE Purchase & Yield</div>
+                <h3>Grade-A Office Towers & Pre-Leased Assets</h3>
+                <p>Institutional IT tech parks, 9.4% rental yield pre-leased floors & commercial land.</p>
                 <div className="quick-card-link">
-                  <span>Browse Buy Catalog</span>
+                  <span>Browse Commercial Buy</span>
                   <ArrowRight size={14} />
                 </div>
               </div>
@@ -81,11 +81,11 @@ export default function HomePage({
                 <Sparkles size={24} />
               </div>
               <div className="quick-card-content">
-                <div className="quick-card-tag">Rental & Lease</div>
-                <h3>High-End Residences & Corporate Penthouses</h3>
-                <p>Fully furnished expat-grade apartments with verified ownership.</p>
+                <div className="quick-card-tag">Flexible Workspaces & Flex</div>
+                <h3>Coworking, Meeting Rooms & Managed Suites</h3>
+                <p>On-demand day passes, hourly boardrooms, managed offices & virtual office GST registration.</p>
                 <div className="quick-card-link">
-                  <span>Browse Rental Catalog</span>
+                  <span>Browse Workspaces</span>
                   <ArrowRight size={14} />
                 </div>
               </div>
@@ -99,11 +99,11 @@ export default function HomePage({
                 <ShieldCheck size={24} />
               </div>
               <div className="quick-card-content">
-                <div className="quick-card-tag">Seller & Landlord Portal</div>
-                <h3>List Your Prime Property with Hanu Reddy</h3>
-                <p>Reach 25,000+ vetted buyers and global NRI investors with zero upfront fee.</p>
+                <div className="quick-card-tag">Commercial Landlord Portal</div>
+                <h3>List Your Commercial Space or Office Tower</h3>
+                <p>Reach 25,000+ corporate enterprises, tech giants and institutional funds with zero upfront fee.</p>
                 <div className="quick-card-link">
-                  <span>List Your Property</span>
+                  <span>List Commercial Space</span>
                   <ArrowRight size={14} />
                 </div>
               </div>

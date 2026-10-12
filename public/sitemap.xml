@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://hanureddyrealty.com/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&amp;fit=crop&amp;w=2200&amp;q=85</image:loc>
+      <image:title>Hanu Reddy Realty - India Premier Commercial Real Estate</image:title>
+      <image:caption>Grade-A Corporate Office Towers and Workspaces in Chennai, Bengaluru, Hyderabad</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Commercial Buy & Pre-Leased -->
+  <url>
+    <loc>https://hanureddyrealty.com/#buy</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Commercial Office Spaces and Pre-Leased Towers for Sale</image:title>
+    </image:image>
+  </url>
+
+  <!-- Lease & Flexible Workspaces -->
+  <url>
+    <loc>https://hanureddyrealty.com/#rent</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Managed Office Suites and Flexible Coworking Hubs for Lease</image:title>
+    </image:image>
+  </url>
+
+  <!-- CalQ Space & Cost Calculator -->
+  <url>
+    <loc>https://hanureddyrealty.com/#calq</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- List Property (Sellers & Landlords) -->
+  <url>
+    <loc>https://hanureddyrealty.com/#sell</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Commercial Advisory & Title Audit -->
+  <url>
+    <loc>https://hanureddyrealty.com/#services</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Cities & Commercial Corridors Network -->
+  <url>
+    <loc>https://hanureddyrealty.com/#cities</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Senior Commercial Realtors Directory -->
+  <url>
+    <loc>https://hanureddyrealty.com/#agents</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- About Us & 30-Year Heritage -->
+  <url>
+    <loc>https://hanureddyrealty.com/#about</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Branch Offices & Contact Helpline -->
+  <url>
+    <loc>https://hanureddyrealty.com/#contact</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Careers & Realtor Academy -->
+  <url>
+    <loc>https://hanureddyrealty.com/#careers</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>

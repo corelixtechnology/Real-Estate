@@ -9,8 +9,8 @@ export default function SmoothScroll({ children }) {
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.05,
-      touchMultiplier: 1.8,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.0,
       infinite: false,
       prevent: (node) => {
         if (!node) return false;
@@ -18,13 +18,28 @@ export default function SmoothScroll({ children }) {
           node.classList?.contains('modal-overlay') ||
           node.classList?.contains('modal-content-box') ||
           node.classList?.contains('consult-modal-box') ||
+          node.classList?.contains('lead-capture-modal-box') ||
+          node.classList?.contains('lead-modal-form-content') ||
+          node.classList?.contains('hanu-mobile-drawer') ||
+          node.classList?.contains('mobile-drawer-links-scroll') ||
+          node.classList?.contains('compare-modal-box') ||
+          node.classList?.contains('compare-table-wrapper') ||
+          node.classList?.contains('drawer-content') ||
+          node.classList?.contains('hanu-city-tabs-scroll') ||
+          node.classList?.contains('virtual-tour-viewport') ||
           node.closest?.('.modal-overlay') ||
           node.closest?.('.modal-content-box') ||
           node.closest?.('.consult-modal-box') ||
-          node.closest?.('[data-lenis-prevent]') ||
+          node.closest?.('.lead-capture-modal-box') ||
+          node.closest?.('.lead-modal-form-content') ||
+          node.closest?.('.hanu-mobile-drawer') ||
+          node.closest?.('.mobile-drawer-links-scroll') ||
           node.closest?.('.compare-modal-box') ||
           node.closest?.('.compare-table-wrapper') ||
-          node.closest?.('.drawer-content')
+          node.closest?.('.drawer-content') ||
+          node.closest?.('.hanu-city-tabs-scroll') ||
+          node.closest?.('.virtual-tour-viewport') ||
+          node.closest?.('[data-lenis-prevent]')
         );
       }
     });

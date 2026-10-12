@@ -318,7 +318,7 @@ export default function CalqPage({ onNavigateHome, onOpenListProperty }) {
                 <div className="calq-counter-row">
                   <div className="counter-info">
                     <span className="counter-title">MD / CEO Suite (with Private Lounge)</span>
-                    <span className="counter-sub">Large presidential suite with sofa seating & private restroom</span>
+                    <span className="counter-sub">Executive leadership suite with sofa seating & private executive restroom</span>
                   </div>
                   <div className="counter-actions">
                     <button onClick={() => setCeoCabins(Math.max(0, ceoCabins - 1))}>-</button>

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import PageHeader from '../components/PageHeader';
 import { PROPERTIES, CITIES, BUDGET_RANGES_RENT } from '../data/mockData';
 import {
-  Search, Filter, MapPin, Bed, Bath, Car, ShieldCheck,
+  Search, Filter, MapPin, Users, Building, Car, ShieldCheck,
   Sparkles, Eye, Scale, ArrowRight, LayoutGrid, List,
   RotateCcw, Compass, Phone, MessageSquare, Check, Key, Briefcase
 } from 'lucide-react';
@@ -19,14 +19,13 @@ export default function RentPage({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedBudgetIdx, setSelectedBudgetIdx] = useState(0);
   const [selectedFurnishing, setSelectedFurnishing] = useState('all');
-  const [selectedBhk, setSelectedBhk] = useState('All');
+  const [selectedDeskScale, setSelectedDeskScale] = useState('All');
   const [corporateOnly, setCorporateOnly] = useState(false);
   const [viewMode, setViewMode] = useState('grid');
   const [sortBy, setSortBy] = useState('featured');
 
   // Filter rentals + commercial leasing
   const rentalProperties = useMemo(() => {
-    // If property has listingType === 'rent' or rentPerMonth or listingType === 'commercial'
     let list = PROPERTIES.filter(p => p.listingType === 'rent' || p.rentPerMonth || p.listingType === 'commercial');
 
     // City
@@ -43,14 +42,18 @@ export default function RentPage({
       });
     }
 
-    // Furnishing
+    // Furnishing / Fitout
     if (selectedFurnishing !== 'all') {
       list = list.filter(p => p.furnishing && p.furnishing.toLowerCase().includes(selectedFurnishing));
     }
 
-    // BHK
-    if (selectedBhk !== 'All') {
-      list = list.filter(p => p.bhk && p.bhk.includes(selectedBhk));
+    // Desk Scale
+    if (selectedDeskScale === '< 25 Desks') {
+      list = list.filter(p => p.areaSqft < 3000);
+    } else if (selectedDeskScale === '25 - 60 Desks') {
+      list = list.filter(p => p.areaSqft >= 3000 && p.areaSqft <= 10000);
+    } else if (selectedDeskScale === '60+ Desks') {
+      list = list.filter(p => p.areaSqft > 10000);
     }
 
     // Search query
@@ -72,14 +75,14 @@ export default function RentPage({
     }
 
     return list;
-  }, [selectedCity, searchQuery, selectedBudgetIdx, selectedFurnishing, selectedBhk, corporateOnly, sortBy]);
+  }, [selectedCity, searchQuery, selectedBudgetIdx, selectedFurnishing, selectedDeskScale, corporateOnly, sortBy]);
 
   const resetFilters = () => {
     setSelectedCity('all');
     setSearchQuery('');
     setSelectedBudgetIdx(0);
     setSelectedFurnishing('all');
-    setSelectedBhk('All');
+    setSelectedDeskScale('All');
     setCorporateOnly(false);
     setSortBy('featured');
   };
@@ -88,16 +91,16 @@ export default function RentPage({
     <div className="hanu-page-view hanu-rent-page">
       {/* Page Header */}
       <PageHeader
-        badge="Luxury Rentals & Corporate Leases"
-        title="Exclusive Residences & Penthouses for Rent"
-        subtitle="Furnished luxury sky suites, waterfront villas and turnkey corporate office floors with complete landlord verification."
-        breadcrumb={[{ label: 'Rent Properties' }]}
+        badge="Commercial Leases, Coworking & Managed Suites"
+        title="Flexible Workspaces & Grade-A Office Leases"
+        subtitle="Turnkey plug-and-play corporate office floors, flexible coworking suites, on-demand hourly meeting rooms, and managed team suites with verified landlord titles."
+        breadcrumb={[{ label: 'Lease & Workspaces' }]}
         onNavigateHome={onNavigateHome}
         stats={[
-          { value: '450+', label: 'Available Rentals' },
+          { value: '450+', label: 'Available Workspaces' },
           { value: '24-48 Hrs', label: 'Fast Move-In Turnaround' },
-          { value: '100%', label: 'Standard Expat Leases' },
-          { value: 'Zero', label: 'Hidden Maintenance Surprises' }
+          { value: '100%', label: 'Verified Commercial Title' },
+          { value: 'Zero', label: 'Capex on Managed Suites' }
         ]}
       />
 
@@ -111,7 +114,7 @@ export default function RentPage({
               <Search size={18} className="search-icon" />
               <input
                 type="text"
-                placeholder="Search rentals by locality, landmark (e.g. Koramangala, Boat Club, Akkarai)..."
+                placeholder="Search workspaces by tech park, locality (e.g. OMR, Indiranagar, Financial District)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="hanu-page-search-input"
@@ -151,27 +154,27 @@ export default function RentPage({
 
             {/* Furnishing */}
             <div className="hanu-select-filter">
-              <label>Furnishing Status:</label>
+              <label>Fitout / Furnishing:</label>
               <select
                 value={selectedFurnishing}
                 onChange={(e) => setSelectedFurnishing(e.target.value)}
               >
-                <option value="all">All Furnishing Levels</option>
-                <option value="fully furnished">Fully Furnished / Designer</option>
-                <option value="semi-furnished">Semi-Furnished</option>
-                <option value="unfurnished">Bare Shell / Unfurnished</option>
+                <option value="all">All Fitout Statuses</option>
+                <option value="fully furnished">Turnkey Plug & Play / Fitted</option>
+                <option value="semi-furnished">Warm Shell / Semi-Fitted</option>
+                <option value="unfurnished">Bare Shell / Custom Fitout</option>
               </select>
             </div>
 
-            {/* BHK Filter */}
+            {/* Desk Scale Filter */}
             <div className="hanu-bhk-pills">
-              <label>Bedrooms:</label>
+              <label>Capacity:</label>
               <div className="bhk-options">
-                {['All', '3 BHK', '4 BHK', '5 BHK'].map((b) => (
+                {['All', '< 25 Desks', '25 - 60 Desks', '60+ Desks'].map((b) => (
                   <button
                     key={b}
-                    onClick={() => setSelectedBhk(b)}
-                    className={`bhk-btn ${selectedBhk === b ? 'active' : ''}`}
+                    onClick={() => setSelectedDeskScale(b)}
+                    className={`bhk-btn ${selectedDeskScale === b ? 'active' : ''}`}
                   >
                     {b}
                   </button>
@@ -248,11 +251,11 @@ export default function RentPage({
               <div className="no-results-icon">
                 <Key size={48} />
               </div>
-              <h3>No matching luxury rentals currently available</h3>
-              <p>Looking for a specific corporate lease or diplomatic residence? Let our relocation specialists source bespoke homes.</p>
+              <h3>No matching commercial workspaces currently available</h3>
+              <p>Looking for a specific corporate floor plate or managed team suite? Let our workspace advisory team source off-market options.</p>
               <div className="no-results-actions">
                 <button onClick={resetFilters} className="hanu-btn-ghost">Clear Filters</button>
-                <button onClick={onOpenListProperty} className="hanu-btn-primary">Request Bespoke Rental Search</button>
+                <button onClick={onOpenListProperty} className="hanu-btn-primary">Request Bespoke Workspace Search</button>
               </div>
             </div>
           ) : (
@@ -313,27 +316,27 @@ export default function RentPage({
 
                       <div className="prop-specs-row">
                         {prop.bhk && (
-                          <div className="spec-item">
-                            <Bed size={15} />
+                          <div className="spec-item" title="Capacity & Configuration">
+                            <Users size={15} />
                             <span>{prop.bhk}</span>
                           </div>
                         )}
                         {prop.areaSqft && (
-                          <div className="spec-item">
+                          <div className="spec-item" title="Built-up Area">
                             <Compass size={15} />
                             <span>{prop.areaSqft.toLocaleString()} sq.ft</span>
                           </div>
                         )}
                         {prop.bathrooms > 0 && (
-                          <div className="spec-item">
-                            <Bath size={15} />
-                            <span>{prop.bathrooms} Baths</span>
+                          <div className="spec-item" title="Executive Restrooms">
+                            <Building size={15} />
+                            <span>{prop.bathrooms} Restrooms</span>
                           </div>
                         )}
                         {prop.carparks > 0 && (
-                          <div className="spec-item">
+                          <div className="spec-item" title="Dedicated Parking">
                             <Car size={15} />
-                            <span>{prop.carparks} Cars</span>
+                            <span>{prop.carparks} Parking Bays</span>
                           </div>
                         )}
                       </div>
@@ -352,7 +355,7 @@ export default function RentPage({
                             <span className="agent-name">{prop.agent.name}</span>
                           </div>
                           <a
-                            href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I am interested in renting ${prop.title} (${prop.id}) listed at ${displayRent}`)}`}
+                            href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hi, I am interested in renting ${prop.title} (${prop.id}) listed at ${displayRent}`)}`}
                             target="_blank"
                             rel="noreferrer"
                             className="agent-wa-btn"

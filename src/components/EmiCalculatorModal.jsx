@@ -37,14 +37,14 @@ export default function EmiCalculatorModal({ onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content-box" style={{ maxWidth: '850px' }} onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content-box emi-modal-box" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose}>
           <X size={20} />
         </button>
 
-        <div style={{ padding: '36px' }}>
+        <div className="emi-modal-body">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'var(--color-primary-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)' }}>
+            <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: 'var(--color-primary-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-primary)', flexShrink: 0 }}>
               <Calculator size={20} />
             </div>
             <div>
@@ -64,9 +64,9 @@ export default function EmiCalculatorModal({ onClose }) {
           </div>
 
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '36px', marginTop: '28px' }}>
+          <div className="emi-modal-grid">
             {/* Left Controls */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div className="emi-modal-controls">
               {/* Loan Amount Slider */}
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
@@ -141,7 +141,7 @@ export default function EmiCalculatorModal({ onClose }) {
             </div>
 
             {/* Right Summary Card */}
-            <div style={{
+            <div className="emi-modal-results" style={{
               background: 'linear-gradient(135deg, #17171d 0%, #291819 100%)',
               borderRadius: 'var(--radius-lg)',
               padding: '28px',
@@ -188,7 +188,7 @@ export default function EmiCalculatorModal({ onClose }) {
               </div>
 
               <a
-                href="https://wa.me/912223334452?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20guidance%20on%20Home%20Loan%20assistance%20and%20bank%20interest%20rates."
+                href="https://wa.me/919422233344?text=Hello%20Hanu%20Reddy%20Realty,%20I%20would%20like%20guidance%20on%20Home%20Loan%20assistance%20and%20bank%20interest%20rates."
                 target="_blank"
                 rel="noreferrer"
                 className="btn"

@@ -32,11 +32,11 @@ export default function Footer({
               <div className="brand-crest" style={{ width: '40px', height: '40px', fontSize: '1.2rem' }}>HR</div>
               <div>
                 <div className="brand-name" style={{ color: '#ffffff', fontSize: '1.2rem' }}>HANU REDDY REALTY</div>
-                <div className="brand-sub" style={{ color: '#ffc278' }}>TRUSTED REAL ESTATE SINCE 1993</div>
+                <div className="brand-sub" style={{ color: '#ffc278' }}>COMMERCIAL & WORKSPACES SINCE 1993</div>
               </div>
             </div>
             <p className="footer-brand-desc">
-              Pioneers of organized institutional real estate brokerage in South India with cross-border operations in Irvine, California. Over 30 years of ethical leadership, zero litigation track record, and ₹10,000+ Crores in closed volume.
+              Pioneers of organized commercial real estate brokerage and flexible workspaces in South India with cross-border operations in Irvine, California. Over 30 years of ethical leadership, zero litigation track record, and ₹10,000+ Crores in closed corporate transactions.
             </p>
             <div style={{ display: 'flex', gap: '8px', color: '#ffc278', fontSize: '0.85rem', alignItems: 'center' }}>
               <ShieldCheck size={16} />
@@ -49,26 +49,26 @@ export default function Footer({
             <h4 className="footer-col-title">Dedicated Portals</h4>
             <ul className="footer-links-list">
               <li className="footer-link-item" onClick={() => handleNav('home')}>Home Overview</li>
-              <li className="footer-link-item" onClick={() => handleNav('buy')}>Buy Luxury Estates</li>
-              <li className="footer-link-item" onClick={() => handleNav('rent')}>Rentals & Leases</li>
+              <li className="footer-link-item" onClick={() => handleNav('buy')}>Buy Commercial & Pre-Leased</li>
+              <li className="footer-link-item" onClick={() => handleNav('rent')}>Lease & Flexible Workspaces</li>
               <li className="footer-link-item" onClick={() => handleNav('calq')}>CalQ Space Calculator</li>
-              <li className="footer-link-item" onClick={() => handleNav('sell')}>List Your Property (Seller)</li>
+              <li className="footer-link-item" onClick={() => handleNav('sell')}>List Commercial Space (Landlord)</li>
               <li className="footer-link-item" onClick={() => handleNav('about')}>About Us & Founders</li>
-              <li className="footer-link-item" onClick={() => handleNav('services')}>360° Services</li>
-              <li className="footer-link-item" onClick={() => handleNav('agents')}>Senior Realtors</li>
+              <li className="footer-link-item" onClick={() => handleNav('services')}>CRE Advisory Services</li>
+              <li className="footer-link-item" onClick={() => handleNav('agents')}>Commercial Brokers</li>
             </ul>
           </div>
 
           {/* Col 3: Prime Cities */}
           <div>
-            <h4 className="footer-col-title">Regional Metros</h4>
+            <h4 className="footer-col-title">Commercial Corridors</h4>
             <ul className="footer-links-list">
-              <li className="footer-link-item" onClick={() => { onSelectCity('chennai'); handleNav('buy'); }}>Chennai Luxury Corridor</li>
-              <li className="footer-link-item" onClick={() => { onSelectCity('bengaluru'); handleNav('buy'); }}>Bengaluru Prime Residences</li>
-              <li className="footer-link-item" onClick={() => { onSelectCity('hyderabad'); handleNav('buy'); }}>Hyderabad Jubilee Hills</li>
-              <li className="footer-link-item" onClick={() => { onSelectCity('coimbatore'); handleNav('buy'); }}>Coimbatore Promenade</li>
-              <li className="footer-link-item" onClick={() => { onSelectCity('irvine'); handleNav('buy'); }}>Irvine, California (USA)</li>
-              <li className="footer-link-item" onClick={() => handleNav('cities')}>All City Network Guides</li>
+              <li className="footer-link-item" onClick={() => { onSelectCity('chennai'); handleNav('buy'); }}>Chennai OMR & Guindy Tech Hubs</li>
+              <li className="footer-link-item" onClick={() => { onSelectCity('bengaluru'); handleNav('buy'); }}>Bengaluru Indiranagar & Whitefield</li>
+              <li className="footer-link-item" onClick={() => { onSelectCity('hyderabad'); handleNav('buy'); }}>Hyderabad Financial District & HITEC</li>
+              <li className="footer-link-item" onClick={() => { onSelectCity('coimbatore'); handleNav('buy'); }}>Coimbatore Race Course CBD</li>
+              <li className="footer-link-item" onClick={() => { onSelectCity('irvine'); handleNav('buy'); }}>Irvine Spectrum Tech Hub (USA)</li>
+              <li className="footer-link-item" onClick={() => handleNav('cities')}>All Commercial Hub Guides</li>
             </ul>
           </div>
 
@@ -96,13 +96,13 @@ export default function Footer({
               No. 14, 2nd Floor, Kasturi Rangan Road, Alwarpet, Chennai, Tamil Nadu - 600018
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.88rem' }}>
-              <a href="tel:+914443999000" style={{ color: '#ffffff', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <a href="tel:+919422233344" style={{ color: '#ffffff', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Phone size={14} color="#ffc278" />
-                <span>+91 44 4399 9000</span>
+                <span>+91 94222 33344</span>
               </a>
-              <a href="https://wa.me/912223334452" target="_blank" rel="noreferrer" style={{ color: '#25D366', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <a href="https://wa.me/919422233344" target="_blank" rel="noreferrer" style={{ color: '#25D366', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <span style={{ fontSize: '1.1rem' }}>●</span>
-                <span>WhatsApp: +91 80560 35603</span>
+                <span>WhatsApp: +91 94222 33344</span>
               </a>
               <a href="mailto:chennai@hanureddyrealty.com" style={{ color: '#ffffff', display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <Mail size={14} color="#ffc278" />

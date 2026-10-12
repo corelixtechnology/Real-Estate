@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Bed, Bath, Car, ArrowRight, ShieldCheck, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
+import { MapPin, Users, Building2, Car, ArrowRight, ShieldCheck, CheckCircle2, MessageSquare, Phone } from 'lucide-react';
 import { PROPERTIES } from '../data/mockData';
 import { TextAnimate } from '@/registry/magicui/text-animate';
 
@@ -15,11 +15,12 @@ export default function FeaturedProperties({
   const [activeTab, setActiveTab] = useState('all');
 
   const filterTabs = [
-    { id: 'all', label: 'All Prime Listings' },
-    { id: 'buy', label: 'Exclusive Residential Buy' },
-    { id: 'rent', label: 'Luxury Rentals' },
-    { id: 'commercial', label: 'Commercial & Tech Parks' },
-    { id: 'plots', label: 'Plots & Land' }
+    { id: 'all', label: 'All Workspaces' },
+    { id: 'commercial', label: 'Corporate Tech Parks' },
+    { id: 'flex', label: 'Coworking & Meeting Suites' },
+    { id: 'rent', label: 'Office Leases & Managed' },
+    { id: 'buy', label: 'Pre-Leased & Buy' },
+    { id: 'land', label: 'Commercial Land' }
   ];
 
   // Filter properties based on city, tab, search query, and property type
@@ -30,7 +31,18 @@ export default function FeaturedProperties({
     }
 
     // Category tab filter
-    if (activeTab !== 'all' && prop.listingType !== activeTab) {
+    if (activeTab === 'flex') {
+      const isFlex = prop.propertyType === 'Flexible Coworking & Desks' || 
+                     prop.propertyType === 'Managed Office Suites' || 
+                     prop.propertyType === 'Meeting & Conference Rooms' ||
+                     prop.propertyType === 'Virtual Office & GST Reg';
+      if (!isFlex) return false;
+    } else if (activeTab === 'commercial') {
+      const isComm = prop.propertyType === 'Commercial Office' || prop.propertyType === 'IT Park / Tech SEZ';
+      if (!isComm) return false;
+    } else if (activeTab === 'land') {
+      if (prop.propertyType !== 'Commercial Land') return false;
+    } else if (activeTab !== 'all' && prop.listingType !== activeTab) {
       return false;
     }
 
@@ -62,14 +74,14 @@ export default function FeaturedProperties({
           <div className="section-tag">
             <CheckCircle2 size={14} />
             <TextAnimate animation="blurInUp" by="character" once as="span">
-              100% VERIFIED EXCLUSIVE PORTFOLIO
+              100% VERIFIED COMMERCIAL PORTFOLIO
             </TextAnimate>
           </div>
           <TextAnimate animation="blurInUp" by="character" once as="h2" className="section-title">
-            Featured Real Estate Collections
+            Featured Commercial & Workspace Collections
           </TextAnimate>
           <TextAnimate animation="fadeIn" by="line" as="p" className="section-subtitle" delay={0.15}>
-            Hand-picked prime residences, commercial landmarks, and approved plots thoroughly audited for 100% clear ownership.
+            Hand-picked Grade-A office towers, flexible coworking hubs, hourly meeting suites, and high-yield pre-leased commercial assets audited for 100% clear ownership.
           </TextAnimate>
 
         </div>
@@ -95,7 +107,12 @@ export default function FeaturedProperties({
               <div key={property.id} className="property-card">
                 {/* Image Container */}
                 <div className="card-image-wrap" onClick={() => onSelectProperty(property)} style={{ cursor: 'pointer' }}>
-                  <img src={property.images[0]} alt={property.title} className="card-img" />
+                  <img 
+                    src={property.images[0]} 
+                    alt={`${property.title} - ${property.propertyType} in ${property.locality}, ${property.cityName}`} 
+                    loading="lazy" 
+                    className="card-img" 
+                  />
                   
                   {/* Badges Top */}
                   <div className="card-badges-top">
@@ -137,17 +154,17 @@ export default function FeaturedProperties({
 
                   {/* Specs Row */}
                   <div className="card-specs-grid">
-                    <div className="spec-item">
-                      <Bed size={15} />
+                    <div className="spec-item" title="Configuration & Workstation Capacity">
+                      <Users size={15} />
                       <span>{property.bhk}</span>
                     </div>
-                    <div className="spec-item">
+                    <div className="spec-item" title="Super Built-Up Area">
                       <span style={{ fontWeight: 800, fontSize: '0.85rem' }}>Sq.Ft:</span>
                       <span>{property.areaSqft.toLocaleString()}</span>
                     </div>
-                    <div className="spec-item">
+                    <div className="spec-item" title="Dedicated Parking">
                       <Car size={15} />
-                      <span>{property.carparks} Covered</span>
+                      <span>{property.carparks} Parking Bays</span>
                     </div>
                   </div>
 

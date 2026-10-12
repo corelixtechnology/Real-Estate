@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import PageHeader from '../components/PageHeader';
 import { PROPERTIES, CITIES, PROPERTY_TYPES, BUDGET_RANGES_BUY } from '../data/mockData';
 import {
-  Search, Filter, SlidersHorizontal, MapPin, Bed, Bath, Car,
+  Search, Filter, SlidersHorizontal, MapPin, Users, Building, Car,
   ShieldCheck, Sparkles, Eye, Scale, Calculator, ArrowRight,
   Check, LayoutGrid, List, RotateCcw, Compass, Phone, MessageSquare
 } from 'lucide-react';
@@ -22,13 +22,13 @@ export default function BuyPage({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('All Types');
   const [selectedBudgetIdx, setSelectedBudgetIdx] = useState(0);
-  const [selectedBhk, setSelectedBhk] = useState('All');
+  const [selectedScale, setSelectedScale] = useState('All');
   const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [virtualTourOnly, setVirtualTourOnly] = useState(false);
   const [sortBy, setSortBy] = useState('featured');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'list'
 
-  // Filter properties (Buy or Commercial or Plots)
+  // Filter properties (Buy or Commercial or Land)
   const filteredProperties = useMemo(() => {
     let list = PROPERTIES.filter(p => p.listingType !== 'rent');
 
@@ -50,9 +50,13 @@ export default function BuyPage({
       list = list.filter(p => p.price >= budget.min);
     }
 
-    // BHK
-    if (selectedBhk !== 'All') {
-      list = list.filter(p => p.bhk && p.bhk.includes(selectedBhk));
+    // Floorplate Scale
+    if (selectedScale === '< 10k sq.ft') {
+      list = list.filter(p => p.areaSqft < 10000);
+    } else if (selectedScale === '10k - 35k sq.ft') {
+      list = list.filter(p => p.areaSqft >= 10000 && p.areaSqft <= 35000);
+    } else if (selectedScale === '35k+ sq.ft') {
+      list = list.filter(p => p.areaSqft > 35000);
     }
 
     // Verified
@@ -87,14 +91,14 @@ export default function BuyPage({
     }
 
     return list;
-  }, [selectedCity, selectedType, selectedBudgetIdx, selectedBhk, verifiedOnly, virtualTourOnly, searchQuery, sortBy]);
+  }, [selectedCity, selectedType, selectedBudgetIdx, selectedScale, verifiedOnly, virtualTourOnly, searchQuery, sortBy]);
 
   const resetFilters = () => {
     setSelectedCity('all');
     setSearchQuery('');
     setSelectedType('All Types');
     setSelectedBudgetIdx(0);
-    setSelectedBhk('All');
+    setSelectedScale('All');
     setVerifiedOnly(false);
     setVirtualTourOnly(false);
     setSortBy('featured');
@@ -104,16 +108,16 @@ export default function BuyPage({
     <div className="hanu-page-view hanu-buy-page">
       {/* Grand Luxury Header */}
       <PageHeader
-        badge="Luxury Real Estate Marketplace"
-        title="Curated Properties & Estates for Sale"
-        subtitle="Discover vetted beachfront villas, palatial sky mansions, commercial assets and clear title plots across India & the USA."
-        breadcrumb={[{ label: 'Buy Properties' }]}
+        badge="Commercial Real Estate Marketplace"
+        title="Grade-A Commercial Properties & High-Yield Assets for Sale"
+        subtitle="Discover vetted tech parks, pre-leased corporate office floors yielding 8.5% – 10.5% net returns, standalone headquarters, and commercial land across India & the USA."
+        breadcrumb={[{ label: 'Buy Commercial' }]}
         onNavigateHome={onNavigateHome}
         stats={[
-          { value: '1,450+', label: 'Verified Listings' },
+          { value: '1,450+', label: 'Commercial Verified' },
           { value: '100%', label: 'Legal Due Diligence' },
           { value: '₹10,000 Cr+', label: 'Transacted Volume' },
-          { value: '0%', label: 'Listing Markups' }
+          { value: '8.5 - 10.5%', label: 'Avg Pre-Leased Yield' }
         ]}
       />
 
@@ -180,15 +184,15 @@ export default function BuyPage({
               </select>
             </div>
 
-            {/* BHK Filter */}
+            {/* Floorplate Scale Filter */}
             <div className="hanu-bhk-pills">
-              <label>BHK:</label>
+              <label>Scale:</label>
               <div className="bhk-options">
-                {['All', '3 BHK', '4 BHK', '5 BHK'].map((b) => (
+                {['All', '< 10k sq.ft', '10k - 35k sq.ft', '35k+ sq.ft'].map((b) => (
                   <button
                     key={b}
-                    onClick={() => setSelectedBhk(b)}
-                    className={`bhk-btn ${selectedBhk === b ? 'active' : ''}`}
+                    onClick={() => setSelectedScale(b)}
+                    className={`bhk-btn ${selectedScale === b ? 'active' : ''}`}
                   >
                     {b}
                   </button>
@@ -218,7 +222,7 @@ export default function BuyPage({
             </div>
 
             {/* Reset Button */}
-            {(selectedCity !== 'all' || selectedType !== 'All Types' || selectedBudgetIdx !== 0 || selectedBhk !== 'All' || searchQuery || verifiedOnly || virtualTourOnly) && (
+            {(selectedCity !== 'all' || selectedType !== 'All Types' || selectedBudgetIdx !== 0 || selectedScale !== 'All' || searchQuery || verifiedOnly || virtualTourOnly) && (
               <button onClick={resetFilters} className="hanu-btn-reset">
                 <RotateCcw size={14} />
                 <span>Reset</span>
@@ -230,7 +234,7 @@ export default function BuyPage({
           <div className="hanu-view-toolbar">
             <div className="toolbar-left">
               <span className="results-count">
-                Showing <strong>{filteredProperties.length}</strong> Luxury Properties
+                Showing <strong>{filteredProperties.length}</strong> Commercial Properties & Assets
               </span>
             </div>
 
@@ -362,8 +366,8 @@ export default function BuyPage({
                       {/* Specs Row */}
                       <div className="prop-specs-row">
                         {prop.bhk && (
-                          <div className="spec-item" title="Bedrooms">
-                            <Bed size={15} />
+                          <div className="spec-item" title="Capacity & Configuration">
+                            <Users size={15} />
                             <span>{prop.bhk}</span>
                           </div>
                         )}
@@ -374,15 +378,15 @@ export default function BuyPage({
                           </div>
                         )}
                         {prop.bathrooms > 0 && (
-                          <div className="spec-item" title="Bathrooms">
-                            <Bath size={15} />
-                            <span>{prop.bathrooms} Baths</span>
+                          <div className="spec-item" title="Executive Restrooms">
+                            <Building size={15} />
+                            <span>{prop.bathrooms} Restrooms</span>
                           </div>
                         )}
                         {prop.carparks > 0 && (
-                          <div className="spec-item" title="Car Parks">
+                          <div className="spec-item" title="Dedicated Parking">
                             <Car size={15} />
-                            <span>{prop.carparks} Cars</span>
+                            <span>{prop.carparks} Parking Bays</span>
                           </div>
                         )}
                       </div>
@@ -396,7 +400,7 @@ export default function BuyPage({
                             <span className="agent-name">{prop.agent.name}</span>
                           </div>
                           <a
-                            href={`https://wa.me/912223334452?text=${encodeURIComponent(`Hi, I would like to inquire about ${prop.title} (${prop.id}) listed at ${prop.priceFormatted}`)}`}
+                            href={`https://wa.me/919422233344?text=${encodeURIComponent(`Hi, I would like to inquire about ${prop.title} (${prop.id}) listed at ${prop.priceFormatted}`)}`}
                             target="_blank"
                             rel="noreferrer"
                             className="agent-wa-btn"

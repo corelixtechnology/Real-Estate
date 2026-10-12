@@ -19,19 +19,19 @@ export default function SellPage({ onNavigateHome, onOpenEmiCalc }) {
   
   const [selectedCity, setSelectedCity] = useState('chennai');
   const [locality, setLocality] = useState('');
-  const [propertyType, setPropertyType] = useState('Flat / Apartment');
+  const [propertyType, setPropertyType] = useState('Commercial Office');
   const [builtUpArea, setBuiltUpArea] = useState('');
-  const [bhk, setBhk] = useState('3 BHK');
+  const [bhk, setBhk] = useState('30 - 80 Managed Suite');
   const [expectedPrice, setExpectedPrice] = useState('');
 
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const [propertyDescription, setPropertyDescription] = useState('');
 
   const AMENITY_OPTIONS = [
-    'Private Swimming Pool', 'Italian Marble Flooring', '100% Vastu Compliant',
-    'Sea View / Waterfront', 'Private Elevator', 'Smart Home Automation',
-    'Private Garden / Terrace', 'Servant Quarters', 'Gated Security 24/7',
-    'EV Charging Point', '100% DG Power Backup', 'Clear Freehold Patta'
+    '100% DG Power Backup & N+1 UPS', 'LEED Platinum / Gold Certified', 'Tier-1 High-Speed Fiber Backbone',
+    'Central HVAC / VRV Air Conditioning', 'Multi-Tier Biometric & RFID Access', 'High-Speed Passenger & Service Elevators',
+    'Dedicated Executive Boardroom & VC Setup', 'Cafeteria & Collaborative Lounge', 'Covered Multi-Level Car Parking',
+    'EV Charging Bays for Fleets', 'RERA Approved & Clear Freehold Title', 'Pre-Leased to MNC Tenant (8.5%+ Yield)'
   ];
 
   const toggleAmenity = (amenity) => {
@@ -173,7 +173,7 @@ export default function SellPage({ onNavigateHome, onOpenEmiCalc }) {
                         <input
                           type="tel"
                           required
-                          placeholder="+91 98400 XXXXX"
+                          placeholder="+91 94222 33344"
                           value={ownerPhone}
                           onChange={(e) => setOwnerPhone(e.target.value)}
                           className="hanu-input-field"
@@ -251,18 +251,20 @@ export default function SellPage({ onNavigateHome, onOpenEmiCalc }) {
                       </div>
 
                       <div className="wizard-input-wrap">
-                        <label>Bedrooms / BHK</label>
+                        <label>Capacity / Configuration *</label>
                         <select
                           value={bhk}
                           onChange={(e) => setBhk(e.target.value)}
                           className="hanu-input-field"
                         >
-                          <option value="2 BHK">2 BHK</option>
-                          <option value="3 BHK">3 BHK</option>
-                          <option value="4 BHK">4 BHK</option>
-                          <option value="5 BHK">5 BHK</option>
-                          <option value="Palatial / 6+ BHK">Palatial / 6+ BHK</option>
-                          <option value="Commercial / Land">Commercial / Land</option>
+                          <option value="15 - 30 Desks">15 – 30 Flex Workstations</option>
+                          <option value="30 - 80 Desks">30 – 80 Managed Suite</option>
+                          <option value="80 - 200 Desks">80 – 200 Corporate Floor</option>
+                          <option value="200+ Workstations">200+ Workstations / Standalone HQ</option>
+                          <option value="Meeting Suite">Meeting & Conference Suite</option>
+                          <option value="Retail Flagship">Retail Flagship / Showroom</option>
+                          <option value="Logistics Warehouse">Logistics Warehouse / Fulfillment</option>
+                          <option value="Commercial Land">Commercial Land / Development</option>
                         </select>
                       </div>
                     </div>
@@ -300,8 +302,8 @@ export default function SellPage({ onNavigateHome, onOpenEmiCalc }) {
                   <div className="wizard-step-content">
                     <div className="step-intro-header">
                       <span className="badge-tag badge-gold">Step 3 of 4</span>
-                      <h3>Luxury Amenities & Premium Features</h3>
-                      <p>Select key lifestyle elements that make your estate stand out.</p>
+                      <h3>Commercial Infrastructure & Enterprise Features</h3>
+                      <p>Select key workplace specifications that add value to your corporate property.</p>
                     </div>
 
                     <div className="amenities-selection-grid">

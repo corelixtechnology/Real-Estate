@@ -33,7 +33,12 @@ export default function RealtorsSection() {
             return (
               <div key={realtor.id} className="realtor-profile-card">
                 <div className="realtor-img-wrap">
-                  <img src={realtor.image} alt={realtor.name} className="realtor-img" />
+                  <img 
+                    src={realtor.image} 
+                    alt={`${realtor.name} - ${realtor.designation} at Hanu Reddy Realty, ${realtor.location}`} 
+                    loading="lazy" 
+                    className="realtor-img" 
+                  />
                   <div className="realtor-exp-badge">{realtor.experience}</div>
                 </div>
 
@@ -56,7 +61,7 @@ export default function RealtorsSection() {
                       <span>Call Now</span>
                     </a>
                     <a
-                      href={`https://wa.me/912223334452?text=${waMsg}`}
+                      href={`https://wa.me/919422233344?text=${waMsg}`}
                       target="_blank"
                       rel="noreferrer"
                       className="realtor-btn realtor-wa-btn"
